@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c71ve5k4d51bu"]
+
+[ext_resource type="PackedScene" uid="uid://bjc76mdbeusg6" path="res://scenes/background.tscn" id="1_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://dbaceqkj74wwd" path="res://scenes/player.tscn" id="2_rwgxs"]
+
+[node name="World" type="Node3D" unique_id=1812466907]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=161271136]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.156701, 0)
+
+[node name="Correctly oreinttation - Copy - Copy" parent="." unique_id=1581823510 instance=ExtResource("1_rwgxs")]
+
+[node name="CharacterBody3D" parent="." unique_id=537846371 instance=ExtResource("2_rwgxs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.147196, 0)
