@@ -4,6 +4,7 @@ var speed = WALK_SPEED
 const SPRINT_SPEED = 80.0
 const WALK_SPEED = 5.0
 const JUMP_VELOCITY = 4.5
+const SPRINT_JUMP = 20
 const SENSITIVITY = 0.008
 
 # bob variables
@@ -36,8 +37,12 @@ func _physics_process(delta):
 		velocity += get_gravity() * delta
 
 	# Jump
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	if Input.is_action_just_pressed("jump"):
+		if Input.is_action_pressed("sprint"):
+			velocity.y = SPRINT_JUMP 
+		else:
+			if is_on_floor():
+				velocity.y = JUMP_VELOCITY
 
 	# Sprint toggle
 	speed = SPRINT_SPEED if Input.is_action_pressed("sprint") else WALK_SPEED
@@ -72,5 +77,6 @@ func _physics_process(delta):
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
-	pos.x = cos(time * BOB_FREQ / 2.0) * BOB_AMP
+	pos.x = cos(time * BOB_FREQ / 20.0) * BOB_AMP
+	
 	return pos
