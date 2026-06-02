@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c71ve5k4d51bu"]
 
 [ext_resource type="Script" uid="uid://h8fw6cuej76r" path="res://scripts/world.gd" id="1_x8w2n"]
-[ext_resource type="PackedScene" uid="uid://dnaltcs7tr7d" path="res://assests/first design proto.blend" id="2_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://d3d6ya8hikm41" path="res://assests/first design proto.blend" id="2_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://dbaceqkj74wwd" path="res://scenes/player.tscn" id="2_rwgxs"]
 
 [sub_resource type="Environment" id="Environment_4wyf3"]
@@ -23,7 +23,7 @@ script = ExtResource("1_x8w2n")
 environment = SubResource("Environment_4wyf3")
 
 [node name="CharacterBody3D" parent="." unique_id=537846371 instance=ExtResource("2_rwgxs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -329.54895, 23.048496, 230.2365)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -583.33527, 23.048496, 311.49524)
 
 [node name="first design proto" parent="." unique_id=648212325 instance=ExtResource("2_4wyf3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -227.85013, 18.165823, 153.16185)
