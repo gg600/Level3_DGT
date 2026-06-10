@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Level3_GameProject"
-run/main_scene="uid://c71ve5k4d51bu"
+run/main_scene="uid://cb7kpt384j2cb"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://assests/icon.svg"
 
