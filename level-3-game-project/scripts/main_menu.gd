@@ -13,15 +13,15 @@ func _on_new_game_pressed():
 
 
 func _on_instructions_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://scenes/instructions.tscn")
 
 
 func _on_options_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://scenes/options.tscn")
 
 
 func _on_language_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://scenes/language.tscn")
 
 
 func _on_quit_pressed():
@@ -29,4 +29,4 @@ func _on_quit_pressed():
 
 
 func _on_credits_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://scenes/credits.tscn")
