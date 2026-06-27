@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://delo5s0r5tvdi"]
+
+[ext_resource type="Script" uid="uid://b2e7m5etevfsg" path="res://scripts/quit.gd" id="1_qwxc2"]
+[ext_resource type="FontFile" uid="uid://bij0sgkky0no5" path="res://assests/Fonts/static/Lora-Regular.ttf" id="1_ywobk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qwxc2"]
+bg_color = Color(0.8089983, 0.8089983, 0.8089982, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7lmop"]
+bg_color = Color(0.24825832, 0.31574786, 0.9281022, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nj43b"]
+bg_color = Color(0.46834213, 0, 0, 1)
+
+[node name="Quit" type="Control" unique_id=329157799]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qwxc2")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=242632084]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.010390563, 7.219613e-08, 0.14673626, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1611011981]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -227.5
+offset_top = -116.5
+offset_right = 227.5
+offset_bottom = 116.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qwxc2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=535375873]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Quit" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1752605795]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ywobk")
+theme_override_font_sizes/font_size = 30
+text = "
+Quit"
+horizontal_alignment = 1
+
+[node name="Confirmation" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1330324569]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ywobk")
+text = "Are you sure you want to quit?"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1075408123]
+layout_mode = 2
+theme_override_constants/separation = 13
+alignment = 1
+
+[node name="Cancel" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=249763170]
+custom_minimum_size = Vector2(140, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ywobk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7lmop")
+text = "Cancel"
+
+[node name="Quit" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=2028287289]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ywobk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_nj43b")
+text = "Quit Game"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/Cancel" to="." method="_on_cancel_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/Quit" to="." method="_on_quit_pressed"]
