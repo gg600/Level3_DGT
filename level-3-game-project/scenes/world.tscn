@@ -53,7 +53,7 @@ shader_parameter/starmap_flip_u = false
 shader_parameter/starmap_flip_v = false
 shader_parameter/starmap_alignment = Vector3(2.68288, -0.25891, 0.40101)
 shader_parameter/star_rotation_offset = 9.38899
-shader_parameter/star_rotation = -11.575341849442658
+shader_parameter/star_rotation = -11.264060674776921
 shader_parameter/star_tilt = -1.2915436464758039
 shader_parameter/star_field_color = Color(1, 1, 1, 1)
 shader_parameter/star_field_texture = ExtResource("7_2lf6f")
@@ -69,8 +69,8 @@ shader_parameter/cirrus_absorption = 2.0
 shader_parameter/cirrus_sky_tint_fade = 0.5
 shader_parameter/cirrus_size = 1.0
 shader_parameter/cirrus_uv = Vector2(0.16, 0.11)
-shader_parameter/cirrus_position1 = Vector2(0.4475593, 0.4475593)
-shader_parameter/cirrus_position2 = Vector2(0.4475593, 0.4475593)
+shader_parameter/cirrus_position1 = Vector2(0.42837036, 0.42837036)
+shader_parameter/cirrus_position2 = Vector2(0.42837036, 0.42837036)
 shader_parameter/cirrus_texture = ExtResource("3_dss4m")
 shader_parameter/cumulus_visible = true
 shader_parameter/cumulus_intensity = 0.6
@@ -80,7 +80,7 @@ shader_parameter/cumulus_absorption = 2.0
 shader_parameter/cumulus_noise_freq = 2.7
 shader_parameter/cumulus_sky_tint_fade = 0.0
 shader_parameter/cumulus_size = 0.5
-shader_parameter/cumulus_position = Vector2(2.237695, 2.237695)
+shader_parameter/cumulus_position = Vector2(2.141823, 2.141823)
 shader_parameter/cumulus_texture = ExtResource("4_7t5mc")
 shader_parameter/cumulus_partial_mie_phase = Vector3(0.957564, 1.042436, 0.412)
 shader_parameter/cumulus_mie_intensity = 1.0
@@ -90,7 +90,7 @@ shader_parameter/azimuthal_grid_rotation_offset = 0.03
 shader_parameter/show_equatorial_grid = false
 shader_parameter/equatorial_grid_color = Color(0, 0.75, 1, 1)
 shader_parameter/equatorial_grid_rotation_offset = 0.03
-shader_parameter/moon_matrix = Basis(0.97112685, -0.22932222, -0.06575708, 0.08341862, 0.58465666, -0.8069808, 0.22350393, 0.7781954, 0.5869055)
+shader_parameter/moon_matrix = Basis(0.8575769, -0.49443024, -0.14177558, 0.18183959, 0.54927135, -0.81561947, 0.4811403, 0.6736761, 0.56094944)
 
 [sub_resource type="Sky" id="Sky_munwf"]
 sky_material = SubResource("ShaderMaterial_xgqkh")
@@ -140,31 +140,33 @@ script = ExtResource("1_x8w2n")
 environment = SubResource("Environment_ts3gi")
 camera_attributes = SubResource("CameraAttributesPractical_0nbtd")
 script = ExtResource("9_oo54l")
-current_time = 13.185760000003333
+current_time = 12.0
+minutes_per_day = 0.0
 wind_direction = 2.35619451204804
 metadata/_custom_type_script = "uid://deo0gxkmk2ahd"
 
 [node name="SunLight" type="DirectionalLight3D" parent="Sky3D" unique_id=2071665934]
-transform = Transform3D(0.89147514, 0.32921758, -0.31126812, 0, 0.68702054, 0.726638, 0.4530696, -0.6477797, 0.61246175, -0.31126812, 0.726638, 0.61246175)
+transform = Transform3D(0.998738, 0.039080806, -0.031545468, 0, 0.62809855, 0.77813387, 0.050223757, -0.7771519, 0.62730587, -0.031545468, 0.77813387, 0.62730587)
 shadow_enabled = true
 
 [node name="MoonLight" type="DirectionalLight3D" parent="Sky3D" unique_id=1383724893]
-transform = Transform3D(0, -0.9747031, 0.22350393, 0.60213774, 0.1784438, 0.7781953, -0.79839224, 0.13458015, 0.5869055, 0.22350393, 0.7781953, 0.5869055)
+transform = Transform3D(0, -0.87664366, 0.48114032, 0.6398833, 0.36974293, 0.6736762, -0.76847214, 0.30787364, 0.56094956, 0.48114032, 0.6736762, 0.56094956)
 light_color = Color(0.572549, 0.776471, 0.956863, 1)
 light_energy = 0.0
 
 [node name="SkyDome" type="Node" parent="Sky3D" unique_id=1262756075]
 script = ExtResource("10_kpybi")
-sun_azimuth = -3.6117983
-sun_altitude = -0.7573807
-moon_azimuth = -2.7777314
-moon_altitude = -0.67900926
+sun_azimuth = -3.1918375
+sun_altitude = -0.6791071
+moon_azimuth = -2.432631
+moon_altitude = -0.8316244
 wind_direction = 2.35619451204804
 
 [node name="TimeOfDay" type="Node" parent="Sky3D" unique_id=933261869]
 script = ExtResource("11_ctatt")
 dome_path = NodePath("../SkyDome")
-current_time = 13.185760000003333
+minutes_per_day = 0.0
+current_time = 12.0
 day = 2
 
 [node name="CharacterBody3D" parent="." unique_id=537846371 instance=ExtResource("2_rwgxs")]
