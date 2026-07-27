@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://b13qy3w3c14ox"]
+
+[ext_resource type="Script" uid="uid://2j73guhgnan" path="res://scripts/interaction_ui.gd" id="1_4sumw"]
+[ext_resource type="FontFile" uid="uid://bij0sgkky0no5" path="res://assests/Fonts/static/Lora-Regular.ttf" id="2_djgin"]
+
+[node name="InteractionUI" type="CanvasLayer" unique_id=986432447]
+script = ExtResource("1_4sumw")
+
+[node name="Panel" type="Panel" parent="." unique_id=1501034655]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1757271259]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="Panel/VBoxContainer" unique_id=400682639]
+layout_mode = 2
+
+[node name="Description" type="Label" parent="Panel/VBoxContainer" unique_id=445627759]
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="Panel/VBoxContainer" unique_id=1064894874]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_djgin")
+theme_override_font_sizes/font_size = 160
+text = "Close"
+
+[connection signal="pressed" from="Panel/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

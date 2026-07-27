@@ -70,6 +70,7 @@ _data = {
 }
 
 [node name="InfoPoint" type="Node3D" unique_id=317136622]
+transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, 0, 0, 0)
 script = ExtResource("1_aogg2")
 
 [node name="question_mark" parent="." unique_id=1446924972 instance=ExtResource("2_dsmg6")]

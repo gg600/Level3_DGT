@@ -15,6 +15,8 @@
 [ext_resource type="Script" uid="uid://deo0gxkmk2ahd" path="res://addons/sky_3d/src/Sky3D.gd" id="9_oo54l"]
 [ext_resource type="Script" uid="uid://b4tkplvh7fq40" path="res://addons/sky_3d/src/SkyDome.gd" id="10_kpybi"]
 [ext_resource type="Script" uid="uid://cjmkcj8hwm7ts" path="res://addons/sky_3d/src/TimeOfDay.gd" id="11_ctatt"]
+[ext_resource type="PackedScene" uid="uid://dbym6d56mk20w" path="res://scenes/info_point.tscn" id="16_dss4m"]
+[ext_resource type="PackedScene" uid="uid://b13qy3w3c14ox" path="res://scenes/interaction_ui.tscn" id="17_7t5mc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xgqkh"]
 shader = ExtResource("2_xo05s")
@@ -69,8 +71,8 @@ shader_parameter/cirrus_absorption = 2.0
 shader_parameter/cirrus_sky_tint_fade = 0.5
 shader_parameter/cirrus_size = 1.0
 shader_parameter/cirrus_uv = Vector2(0.16, 0.11)
-shader_parameter/cirrus_position1 = Vector2(0.42837036, 0.42837036)
-shader_parameter/cirrus_position2 = Vector2(0.42837036, 0.42837036)
+shader_parameter/cirrus_position1 = Vector2(0.08869784, 0.08869784)
+shader_parameter/cirrus_position2 = Vector2(0.08869784, 0.08869784)
 shader_parameter/cirrus_texture = ExtResource("3_dss4m")
 shader_parameter/cumulus_visible = true
 shader_parameter/cumulus_intensity = 0.6
@@ -80,7 +82,7 @@ shader_parameter/cumulus_absorption = 2.0
 shader_parameter/cumulus_noise_freq = 2.7
 shader_parameter/cumulus_sky_tint_fade = 0.0
 shader_parameter/cumulus_size = 0.5
-shader_parameter/cumulus_position = Vector2(2.141823, 2.141823)
+shader_parameter/cumulus_position = Vector2(0.44345593, 0.44345593)
 shader_parameter/cumulus_texture = ExtResource("4_7t5mc")
 shader_parameter/cumulus_partial_mie_phase = Vector3(0.957564, 1.042436, 0.412)
 shader_parameter/cumulus_mie_intensity = 1.0
@@ -363,6 +365,11 @@ theme_override_fonts/font = ExtResource("5_71j4m")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_jhx03")
 text = "Main Menu"
+
+[node name="InfoPoint" parent="." unique_id=317136622 instance=ExtResource("16_dss4m")]
+transform = Transform3D(2.8, 0, 0, 0, 2.8, 0, 0, 0, 2.8, -662.8511, 17.824623, 521.88446)
+
+[node name="InteractionUI" parent="." unique_id=986432447 instance=ExtResource("17_7t5mc")]
 
 [connection signal="pressed" from="PauseMenu/PausePanel/VBoxContainer/Resume" to="PauseMenu" method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseMenu/PausePanel/VBoxContainer/Options" to="PauseMenu" method="_on_options_pressed"]
