@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2j73guhgnan" path="res://scripts/interaction_ui.gd" id="1_4sumw"]
 [ext_resource type="FontFile" uid="uid://bij0sgkky0no5" path="res://assests/Fonts/static/Lora-Regular.ttf" id="2_djgin"]
+[ext_resource type="FontFile" uid="uid://c036m35ywonsk" path="res://assests/Fonts/static/Lora-Bold.ttf" id="2_rqdfo"]
 
 [node name="InteractionUI" type="CanvasLayer" unique_id=986432447]
 script = ExtResource("1_4sumw")
@@ -20,17 +21,36 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 95
 
 [node name="Title" type="Label" parent="Panel/VBoxContainer" unique_id=400682639]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_rqdfo")
+theme_override_font_sizes/font_size = 200
+text = "Example Title"
+horizontal_alignment = 1
 
 [node name="Description" type="Label" parent="Panel/VBoxContainer" unique_id=445627759]
+custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_djgin")
+theme_override_font_sizes/font_size = 70
+text = "YAPAPAPAPPAp this is my discritpopnm tnhsi what ha[[ems i dont really know nwaht gooes onnnn"
+horizontal_alignment = 1
+autowrap_mode = 3
 
-[node name="CloseButton" type="Button" parent="Panel/VBoxContainer" unique_id=1064894874]
+[node name="Control" type="Control" parent="Panel/VBoxContainer" unique_id=1995637925]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer" unique_id=1852335352]
+layout_mode = 2
+theme_override_constants/margin_bottom = 30
+
+[node name="CloseButton" type="Button" parent="Panel/VBoxContainer/MarginContainer" unique_id=1064894874]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_djgin")
 theme_override_font_sizes/font_size = 160
 text = "Close"
 
-[connection signal="pressed" from="Panel/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/MarginContainer/CloseButton" to="." method="_on_close_button_pressed"]
