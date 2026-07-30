@@ -4,6 +4,9 @@
 [ext_resource type="FontFile" uid="uid://bij0sgkky0no5" path="res://assests/Fonts/static/Lora-Regular.ttf" id="2_djgin"]
 [ext_resource type="FontFile" uid="uid://c036m35ywonsk" path="res://assests/Fonts/static/Lora-Bold.ttf" id="2_rqdfo"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rqdfo"]
+bg_color = Color(0, 0.1882353, 0.3019608, 0.85882354)
+
 [node name="InteractionUI" type="CanvasLayer" unique_id=986432447]
 script = ExtResource("1_4sumw")
 
@@ -13,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rqdfo")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1757271259]
 layout_mode = 1

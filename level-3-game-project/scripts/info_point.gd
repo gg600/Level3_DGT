@@ -1,12 +1,19 @@
-
 extends Node3D
 
-@export var title := "Science Block"
+@export_category("English")
+@export var english_title := "Science Block"
 
 @export_multiline
-var information := "Information goes here."
+var english_information := "Information goes here."
+
+@export_category("Japanese")
+@export var japanese_title := "理科棟"
+
+@export_multiline
+var japanese_information := "情報を入力してください。"
 
 var player_near := false
+
 
 func _ready():
 	$Label3D.visible = false
@@ -19,6 +26,7 @@ func _on_area_3d_body_entered(body):
 		$Label3D.visible = true
 		body.current_interactable = self
 
+
 func _on_area_3d_body_exited(body):
 	if body.is_in_group("Player"):
 		player_near = false
@@ -27,5 +35,11 @@ func _on_area_3d_body_exited(body):
 		if body.current_interactable == self:
 			body.current_interactable = null
 
+
 func interact():
-	get_tree().current_scene.get_node("InteractionUI").show_information(title, information)
+	var ui = get_tree().current_scene.get_node("InteractionUI")
+
+	if LanguageManager.current_language == "ja":
+		ui.show_information(japanese_title, japanese_information)
+	else:
+		ui.show_information(english_title, english_information)

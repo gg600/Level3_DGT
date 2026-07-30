@@ -82,9 +82,11 @@ transform = Transform3D(0.95395285, 0, 0.29995665, 0, 1, 0, -0.29995665, 0, 0.95
 shape = SubResource("SphereShape3D_fa6cy")
 
 [node name="Label3D" type="Label3D" parent="." unique_id=1144874659]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.80971634, -0.014991283)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.893678, -0.014991284)
+billboard = 1
 text = "Press E"
 font = ExtResource("3_2i0kd")
+outline_size = 20
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1210535024]
 libraries/ = SubResource("AnimationLibrary_njtqa")

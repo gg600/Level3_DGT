@@ -71,8 +71,8 @@ shader_parameter/cirrus_absorption = 2.0
 shader_parameter/cirrus_sky_tint_fade = 0.5
 shader_parameter/cirrus_size = 1.0
 shader_parameter/cirrus_uv = Vector2(0.16, 0.11)
-shader_parameter/cirrus_position1 = Vector2(0.30298078, 0.30298078)
-shader_parameter/cirrus_position2 = Vector2(0.30298078, 0.30298078)
+shader_parameter/cirrus_position1 = Vector2(0.70258176, 0.70258176)
+shader_parameter/cirrus_position2 = Vector2(0.70258176, 0.70258176)
 shader_parameter/cirrus_texture = ExtResource("3_dss4m")
 shader_parameter/cumulus_visible = true
 shader_parameter/cumulus_intensity = 0.6
@@ -82,7 +82,7 @@ shader_parameter/cumulus_absorption = 2.0
 shader_parameter/cumulus_noise_freq = 2.7
 shader_parameter/cumulus_sky_tint_fade = 0.0
 shader_parameter/cumulus_size = 0.5
-shader_parameter/cumulus_position = Vector2(11.528415, 11.528415)
+shader_parameter/cumulus_position = Vector2(3.5131214, 3.5131214)
 shader_parameter/cumulus_texture = ExtResource("4_7t5mc")
 shader_parameter/cumulus_partial_mie_phase = Vector3(0.957564, 1.042436, 0.412)
 shader_parameter/cumulus_mie_intensity = 1.0
@@ -370,83 +370,103 @@ text = "Main Menu"
 
 [node name="Library" parent="InfoPoints" unique_id=317136622 instance=ExtResource("16_dss4m")]
 transform = Transform3D(2.8, 0, 0, 0, 2.8, 0, 0, 0, 2.8, -662.8511, 17.824623, 521.88446)
-title = "Library"
-information = "The library is a quiet place for reading, studying, completing homework, and borrowing resources to support your learning."
+english_title = "Library"
+english_information = "The library is a quiet place for reading, studying, completing homework, and finding learning resources."
+japanese_title = "図書館"
+japanese_information = "図書館は読書、勉強、宿題、資料を探すための静かな学習スペースです。"
 
 [node name="Canteen" parent="InfoPoints" unique_id=1186463243 instance=ExtResource("16_dss4m")]
 transform = Transform3D(2.7787642, 0, -0.34419277, 0, 2.8, 0, 0.34419277, 0, 2.7787642, -606.24896, 18.21219, 505.24606)
-title = "Canteen"
-information = "The canteen sells food and drinks during interval and lunchtime. Enjoy a variety of options and remember to line up respectfully."
+english_title = "Canteen"
+english_information = "The canteen sells food and drinks during interval and lunchtime."
+japanese_title = "食堂"
+japanese_information = "食堂では、休み時間や昼休みに食べ物や飲み物を購入できます。"
 
 [node name="Whare" parent="InfoPoints" unique_id=385312839 instance=ExtResource("16_dss4m")]
 transform = Transform3D(-1.1828883, 0, -2.5378683, 0, 2.8, 0, 2.5378683, 0, -1.1828883, -580.9943, 18.21219, 469.3652)
-title = "Whare Hoani Paora"
-information = "The Whare Hoani Paora is a place that promotes Te Reo Māori and Tikanga Māori at JPC. It supports Māori students, whānau, cultural learning, and community connections."
+english_title = "Whare Hoani Paora"
+english_information = "Whare Hoani Paora is a space for Māori culture, Te Reo Māori, Tikanga Māori, and connecting with whānau."
+japanese_title = "ホアレ・ホアニ・パオラ"
+japanese_information = "ホアレ・ホアニ・パオラは、マオリ文化、テ・レオ・マオリ、ティカンガ・マオリを学び、つながりを深める場所です。"
 
 [node name="MainReception" parent="InfoPoints" unique_id=1240282767 instance=ExtResource("16_dss4m")]
 transform = Transform3D(-2.6451685, 0, 0.91819537, 0, 2.8, 0, -0.91819537, 0, -2.6451685, -613.2616, 18.21219, 463.77148)
-title = "Main Reception"
-information = "Welcome to John Paul College. Visit Reception if you are arriving late, have a question, need directions, or are welcoming a visitor."
+english_title = "Main Reception"
+english_information = "Reception is the main welcome area of the school. Visit here if you are late, need help, have questions, or need assistance as a visitor."
+japanese_title = "受付"
+japanese_information = "受付は学校の入口にある場所です。遅刻した時や質問がある時、来校者の案内が必要な時に利用します。"
 
 [node name="StudentReception" parent="InfoPoints" unique_id=1551247775 instance=ExtResource("16_dss4m")]
 transform = Transform3D(2.649798, 0, -0.9047491, 0, 2.8000004, 0, 0.9047491, 0, 2.649798, -630.637, 18.21219, 499.02188)
-title = "Student Reception"
-information = "Student Reception can help with attendance, absences, and general student enquiries during the school day."
+english_title = "Student Reception"
+english_information = "Student Reception is a place where students can go for help, ask questions, and receive support with issues related to school life."
+japanese_title = "生徒受付"
+japanese_information = "生徒受付は、学校生活についての質問やサポートが必要な時に生徒が相談できる場所です。困ったことがある場合は、ここで助けを受けることができます。"
 
 [node name="Careers" parent="InfoPoints" unique_id=1385674568 instance=ExtResource("16_dss4m")]
 transform = Transform3D(-0.9284375, 0, -2.6415913, 0, 2.8000004, 0, 2.6415913, 0, -0.9284375, -631.233, 18.21219, 522.1557)
-title = "Careers & Gateway"
-information = "The Careers and Gateway office helps students explore university, apprenticeships, trades, work experience, and future career pathways."
+english_title = "Careers & Gateway"
+english_information = "The Careers and Gateway office helps students explore future study options, careers, work experience, and pathways."
+japanese_title = "進路・キャリア支援"
+japanese_information = "進路支援では、大学、職業訓練、仕事体験、将来のキャリアについて相談することができます。"
 
 [node name="LearningSupport" parent="InfoPoints" unique_id=417771737 instance=ExtResource("16_dss4m")]
 transform = Transform3D(0.31993097, 0, -2.7816622, 0, 2.8000004, 0, 2.7816622, 0, 0.31993097, -645.1376, 18.21219, 563.42737)
-title = "Learning Support"
-information = "Learning Support provides additional academic assistance and support for students who need it."
+english_title = "Student Wellbeing Centre"
+english_information = "The Student Wellbeing Centre provides support for students through counselling, health services, and wellbeing assistance."
+japanese_title = "生徒ウェルビーイングセンター"
+japanese_information = "生徒ウェルビーイングセンターでは、カウンセラーや看護師から健康や生活についてのサポートを受けることができます。"
 
 [node name="CookingRoom" parent="InfoPoints" unique_id=913325110 instance=ExtResource("16_dss4m")]
 transform = Transform3D(-0.6256721, 0, 2.7292004, 0, 2.8000004, 0, -2.7292004, 0, -0.6256721, -658.47375, 18.21219, 571.90076)
-title = "Cooking Room"
-information = "The Cooking Room is used for Food Technology and Nutrition classes, where students learn cooking skills, food preparation, and how to create practical food solutions."
+english_title = "Cooking Room"
+english_information = "The Cooking Room is used for Food Technology classes where students learn cooking and food preparation skills."
+japanese_title = "調理室"
+japanese_information = "調理室では、料理、食品準備、Food Technologyの授業を通して実践的なスキルを学びます。"
 
 [node name="MusicSuite" parent="InfoPoints" unique_id=379850623 instance=ExtResource("16_dss4m")]
 transform = Transform3D(-2.7652824, 0, -0.43956143, 0, 2.8000004, 0, 0.43956143, 0, -2.7652824, -454.9384, 19.877703, 277.29965)
-title = "Music Suite"
-information = "The Music Suite contains classrooms and practice rooms where students learn instruments, rehearse, and prepare performances."
+english_title = "Music Suite"
+english_information = "The Music Suite is used for music lessons, instrument practice, rehearsals, and performances."
+japanese_title = "音楽室"
+japanese_information = "音楽室では、楽器の演奏、音楽の授業、リハーサルや発表の準備を行います。"
 
 [node name="ThurstonTheatre" parent="InfoPoints" unique_id=2064145034 instance=ExtResource("16_dss4m")]
 transform = Transform3D(2.7625377, 0, 0.4564934, 0, 2.8000007, 0, -0.4564934, 0, 2.7625377, -463.9049, 19.877703, 293.42627)
-title = "Thurston Theatre"
-information = "Thurston Theatre is a performance space used for school productions, drama performances, and other creative events. Students develop acting, performance, and teamwork skills through theatre."
+english_title = "Thurston Theatre"
+english_information = "Thurston Theatre is a performance space used for drama productions, school shows, and creative events."
+japanese_title = "サーストンシアター"
+japanese_information = "サーストンシアターでは、演劇、学校公演、様々な創造的なイベントが行われます。"
 
 [node name="DanceRoom" parent="InfoPoints" unique_id=1426673981 instance=ExtResource("16_dss4m")]
 transform = Transform3D(0.61981213, 0, -2.7305372, 0, 2.8000007, 0, 2.7305372, 0, 0.61981213, -433.14368, 19.877703, 263.33228)
-title = "Dance Room"
-information = "The Dance Room is where students develop dance skills, learn choreography, and prepare performances. Students build creativity, confidence, teamwork, and performance skills through dance."
+english_title = "Dance Room"
+english_information = "The Dance Room is used for dance classes, choreography, and performances where students develop creativity and teamwork."
+japanese_title = "ダンスルーム"
+japanese_information = "ダンスルームでは、ダンスの技術、振り付け、パフォーマンスを学びます。"
 
 [node name="Gymnasium" parent="InfoPoints" unique_id=1670678464 instance=ExtResource("16_dss4m")]
 transform = Transform3D(-2.6531746, 0, 0.89479935, 0, 2.8000007, 0, -0.89479935, 0, -2.6531746, -537.4874, 17.97025, 510.2032)
-title = "Gymnasium"
-information = "The gymnasium is used for Physical Education, sports training, competitions, and school assemblies."
+english_title = "Gymnasium"
+english_information = "The Gymnasium is used for PE classes, sports training, assemblies, and school events."
+japanese_title = "体育館"
+japanese_information = "体育館では、体育の授業、スポーツ活動、学校行事や集会が行われます。"
 
 [node name="SportsField" parent="InfoPoints" unique_id=1688988645 instance=ExtResource("16_dss4m")]
 transform = Transform3D(-1.2588351, 0, -2.5010672, 0, 2.8000007, 0, 2.5010672, 0, -1.2588351, -422.5412, 18.930775, 425.1795)
-title = "Sports Field"
-information = "The sports fields are used for rugby, football, athletics, and many other outdoor sporting activities throughout the year."
+english_title = "Sports Fields"
+english_information = "The sports fields are used for rugby, football, athletics, and other outdoor activities."
+japanese_title = "運動場"
+japanese_information = "運動場では、ラグビー、サッカー、陸上競技など様々なスポーツ活動が行われます。"
 
 [node name="AstroCourts" parent="InfoPoints" unique_id=1140759791 instance=ExtResource("16_dss4m")]
 transform = Transform3D(2.77836, 0, 0.34744278, 0, 2.8000002, 0, -0.34744278, 0, 2.77836, -451.19354, 19.218742, 356.51938)
-title = "Astro Courts"
-information = "The astro-turf courts are used for sports such as tennis, netball, and hockey during classes and training sessions."
 
 [node name="CatholicChapel" parent="InfoPoints" unique_id=332931578 instance=ExtResource("16_dss4m")]
 transform = Transform3D(-0.14439243, 0, -2.7962744, 0, 2.8, 0, 2.7962744, 0, -0.14439243, -455.9557, 19.853512, 301.15796)
-title = "Catholic Chapel"
-information = "The chapel is a peaceful place for prayer, reflection, liturgies, and other Catholic celebrations within the school community."
 
 [node name="UniformShop" parent="InfoPoints" unique_id=1139991641 instance=ExtResource("16_dss4m")]
 transform = Transform3D(-1.0016956, 0, -2.6146905, 0, 2.8, 0, 2.6146905, 0, -1.0016956, -627.78174, 18.564873, 479.99814)
-title = "Uniform Shop"
-information = "Need a new uniform item? The Uniform Shop can help with purchasing approved school uniform and accessories."
 
 [node name="InteractionUI" parent="." unique_id=986432447 instance=ExtResource("17_7t5mc")]
 

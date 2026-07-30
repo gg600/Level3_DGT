@@ -6,6 +6,12 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_byx4f"]
 bg_color = Color(0.8089983, 0.8089983, 0.8089982, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yrgbr"]
+bg_color = Color(0.15294118, 0.16862746, 0.72156864, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bttfc"]
+bg_color = Color(0.1536884, 0.17044222, 0.7222306, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w2rlm"]
 bg_color = Color(0.46834213, 0, 0, 1)
 
@@ -44,15 +50,18 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_byx4f")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=505689654]
 layout_mode = 2
-theme_override_constants/separation = 16
+theme_override_constants/separation = 32
+
+[node name="Control" type="Control" parent="PanelContainer/VBoxContainer" unique_id=1304975514]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
 
 [node name="Language" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1417058436]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_bttfc")
 theme_override_font_sizes/font_size = 60
-text = "
-Languge (Placeholder)"
+text = "Languge"
 horizontal_alignment = 1
 
 [node name="Confirmation" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1421729860]
@@ -60,15 +69,31 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_bttfc")
 theme_override_font_sizes/font_size = 32
-text = "Are you sure you want to quit?"
+text = "Pick one language."
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=2125565869]
 layout_mode = 2
-theme_override_constants/separation = 13
+theme_override_constants/separation = 65
 alignment = 1
 
-[node name="Back to Menu" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=2033898711]
+[node name="English" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=255764722]
+custom_minimum_size = Vector2(320, 76)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bttfc")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_yrgbr")
+text = "English (英語)"
+
+[node name="Japanese" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=1664161901]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bttfc")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_bttfc")
+text = "Japanese (日本語)"
+
+[node name="Back to Menu" type="Button" parent="PanelContainer/VBoxContainer" unique_id=2033898711]
 custom_minimum_size = Vector2(400, 76)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_bttfc")
@@ -76,4 +101,6 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_w2rlm")
 text = "Back to Menu"
 
-[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/Back to Menu" to="." method="_on_back_to_menu_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/English" to="." method="_on_english_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/Japanese" to="." method="_on_japanese_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Back to Menu" to="." method="_on_back_to_menu_pressed"]
