@@ -45,4 +45,5 @@ func _on_return_pressed():
 
 func _on_main_menu_pressed():
 	get_tree().paused = false
+	MusicManager.play_menu_music()
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://beyclwbsjjl2q" path="res://scripts/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="FontFile" uid="uid://cfvsm1qdbpo8m" path="res://assests/Fonts/Lora-Italic-VariableFont_wght.ttf" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://c1l1jaxq01jp4" path="res://assests/textures/backgound.png" id="2_bqqt6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vue75"]
 bg_color = Color(0.8971246, 0.87019217, 0.7758802, 1)
@@ -27,6 +28,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_bqqt6")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1200263743]
 layout_mode = 0
@@ -42,7 +44,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.072842635, 0.072842635, 0.072842635, 1)
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 82
-text = "NAME OF THE GAME"
+text = "JPC Explorer"
 horizontal_alignment = 1
 autowrap_mode = 3
 

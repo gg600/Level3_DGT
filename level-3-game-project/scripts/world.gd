@@ -1,6 +1,7 @@
 extends Node3D
 
 func _ready() -> void:
+	MusicManager.play_game_music()
 	_create_trimesh_colliders($"first design proto")
 	LanguageManager.language_changed.connect(update_language)
 	update_language()

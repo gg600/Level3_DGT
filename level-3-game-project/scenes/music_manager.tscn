@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://brlhs6jk2if4g"]
+
+[ext_resource type="Script" uid="uid://drwdkds2iwo8m" path="res://scripts/music_manager.gd" id="1_jd6i5"]
+[ext_resource type="AudioStream" uid="uid://bpwxjic1au8h1" path="res://assests/Music/leberch-inspirational-calm-romantic-story-piano-375930.mp3" id="2_yodp2"]
+[ext_resource type="AudioStream" uid="uid://by6x8eb2ufqtk" path="res://assests/Music/ikoliks_aj-background-music-320427.mp3" id="3_xcw26"]
+
+[node name="MusicManager" type="Node3D" unique_id=1112396240]
+process_mode = 3
+script = ExtResource("1_jd6i5")
+menu_music = ExtResource("2_yodp2")
+game_music = ExtResource("3_xcw26")
+menu_volume_db = 4.0
+game_volume_db = -4.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2128894429]
+autoplay = true

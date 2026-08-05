@@ -18,6 +18,7 @@ config/icon="res://assests/icon.svg"
 [autoload]
 
 LanguageManager="*uid://clgbrb1lap8wt"
+MusicManager="*uid://brlhs6jk2if4g"
 
 [display]
 

@@ -24,10 +24,28 @@ var translations = {
 		"main_menu": "Main Menu",
 		"return_to_pause": "Return to Pause",
 		"return": "Return",
-		"instructions_info": "needs to be added",
-		"options_info": "needs to be added",
-		"credits_info": "need to be added"
+		"instructions_info": "Welcome to JPC Explorer!
 
+		Your goal is to explore the John Paul College campus and learn where important locations are.
+
+		Controls:
+		• W, A, S, D – Move
+		• Mouse – Look around
+		• Space – Jump
+		• Shift – Sprint
+		• E – Interact with information points
+		• Esc – Pause the game
+
+		Walk around the school and interact with information points to learn about each location.
+		Use what you discover to become familiar with the campus.
+
+		Enjoy exploring!",
+		"options_info": "needs to be added",
+		"credits_info": "Third-Party Assets
+
+		Sky3D (Dynamic Day/Night System)
+		Created by TokisanGames
+		Used under the MIT License."
 	},
 
 	"ja": {
@@ -50,9 +68,28 @@ var translations = {
 		"main_menu": "メインメニュー",
 		"return_to_pause": "一時停止画面へ戻る",
 		"return": "戻る",
-		"instructions_info": "needs to be added",
+		"instructions_info": "JPC Explorerへようこそ！
+
+		学校内を探索し、ジョン・ポール・カレッジの重要な場所について学びましょう。
+
+		操作方法：
+		• W、A、S、Dキー – 移動
+		• マウス – 視点を動かす
+		• スペースキー – ジャンプ
+		• Shiftキー – ダッシュ
+		• Eキー – 情報ポイントを調べる
+		• Escキー – ポーズメニューを開く
+
+		学校内を歩き回り、情報ポイントを調べて各施設について学びましょう。
+		キャンパスに慣れるために、さまざまな場所を探索してください。
+
+		楽しく探索しましょう！",
 		"options_info": "needs to be added",
-		"credits_info": "need to be added"
+		"credits_info": "サードパーティアセット
+
+		Sky3D（昼夜サイクルシステム）
+		制作者：TokisanGames
+		MITライセンスのもとで使用しています。"
 	}
 }
 
