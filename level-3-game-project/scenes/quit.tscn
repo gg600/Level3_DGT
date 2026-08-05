@@ -7,7 +7,7 @@
 bg_color = Color(0.8089983, 0.8089983, 0.8089982, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7lmop"]
-bg_color = Color(0.24825832, 0.31574786, 0.9281022, 1)
+bg_color = Color(0.15294118, 0.16862746, 0.72156864, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nj43b"]
 bg_color = Color(0.46834213, 0, 0, 1)
@@ -37,23 +37,23 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -227.5
-offset_top = -116.5
-offset_right = 227.5
-offset_bottom = 116.5
+offset_left = -450.0
+offset_top = -230.0
+offset_right = 450.0
+offset_bottom = 230.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qwxc2")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=535375873]
 layout_mode = 2
-theme_override_constants/separation = 8
+theme_override_constants/separation = 16
 
 [node name="Quit" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1752605795]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_ywobk")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 60
 text = "
 Quit"
 horizontal_alignment = 1
@@ -62,6 +62,7 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_ywobk")
+theme_override_font_sizes/font_size = 32
 text = "Are you sure you want to quit?"
 horizontal_alignment = 1
 
@@ -71,16 +72,18 @@ theme_override_constants/separation = 13
 alignment = 1
 
 [node name="Cancel" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=249763170]
-custom_minimum_size = Vector2(140, 40)
+custom_minimum_size = Vector2(280, 80)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_ywobk")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_7lmop")
 text = "Cancel"
 
 [node name="Quit" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=2028287289]
-custom_minimum_size = Vector2(140, 0)
+custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_ywobk")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_nj43b")
 text = "Quit Game"
 

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://be31cnw42rsgo"]
 
-[ext_resource type="Script" uid="uid://ba1dicbvyqf2c" path="res://scripts/instructions.gd" id="1_yjkok"]
+[ext_resource type="Script" uid="uid://2n81rpmopw0i" path="res://scripts/options_menu.gd" id="1_yjkok"]
 [ext_resource type="FontFile" uid="uid://bij0sgkky0no5" path="res://assests/Fonts/static/Lora-Regular.ttf" id="2_2iy26"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kv8mn"]
@@ -34,23 +34,23 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -227.5
-offset_top = -116.5
-offset_right = 227.5
-offset_bottom = 116.5
+offset_left = -450.0
+offset_top = -230.0
+offset_right = 450.0
+offset_bottom = 230.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kv8mn")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=87390487]
 layout_mode = 2
-theme_override_constants/separation = 8
+theme_override_constants/separation = 16
 
 [node name="Sound" type="Label" parent="PanelContainer/VBoxContainer" unique_id=924882003]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_2iy26")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 60
 text = "
 Sound/Options (Placeholder)"
 horizontal_alignment = 1
@@ -59,6 +59,7 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_2iy26")
+theme_override_font_sizes/font_size = 32
 text = "Are you sure you want to quit?"
 horizontal_alignment = 1
 
@@ -68,9 +69,10 @@ theme_override_constants/separation = 13
 alignment = 1
 
 [node name="Back to Menu" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=1900182754]
-custom_minimum_size = Vector2(200, 38)
+custom_minimum_size = Vector2(400, 76)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_2iy26")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_1sggn")
 text = "Back to Menu"
 

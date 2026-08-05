@@ -1,9 +1,9 @@
 extends Control
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	LanguageManager.language_changed.connect(update_language)
+	update_language()
 
 
 func _on_cancel_pressed():
@@ -12,3 +12,9 @@ func _on_cancel_pressed():
 
 func _on_quit_pressed():
 	get_tree().quit()
+
+func update_language():
+	$PanelContainer/VBoxContainer/Quit.text = LanguageManager.get_text("quit")
+	$PanelContainer/VBoxContainer/Confirmation.text = LanguageManager.get_text("quit_confirmation")
+	$PanelContainer/VBoxContainer/HBoxContainer/Cancel.text = LanguageManager.get_text("cancel")
+	$PanelContainer/VBoxContainer/HBoxContainer/Quit.text = LanguageManager.get_text("quit")

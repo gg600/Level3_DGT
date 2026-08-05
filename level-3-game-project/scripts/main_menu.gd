@@ -3,10 +3,17 @@ extends Control
 
 
 func _ready():
-	pass
+	LanguageManager.language_changed.connect(update_language)
+	update_language()
 
 
-
+func update_language():
+	$"VBoxContainer/New Game".text = LanguageManager.get_text("new_game")
+	$VBoxContainer/Instructions.text = LanguageManager.get_text("instructions")
+	$VBoxContainer/Options.text = LanguageManager.get_text("options")
+	$VBoxContainer/Language.text = LanguageManager.get_text("language")
+	$VBoxContainer/Quit.text = LanguageManager.get_text("quit")
+	$Credits.text = LanguageManager.get_text("credits")
 
 func _on_new_game_pressed():
 	get_tree().change_scene_to_file("res://scenes/world.tscn")

@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://dbym6d56mk20w"]
+
+[ext_resource type="Script" uid="uid://by53ycac0w2ja" path="res://scripts/info_point.gd" id="1_aogg2"]
+[ext_resource type="PackedScene" uid="uid://bvrxlhg6i7pgl" path="res://assests/Blender/question_mark.glb" id="2_dsmg6"]
+[ext_resource type="FontFile" uid="uid://bij0sgkky0no5" path="res://assests/Fonts/static/Lora-Regular.ttf" id="3_2i0kd"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fa6cy"]
+radius = 1.0
+
+[sub_resource type="Animation" id="Animation_wnfou"]
+resource_name = "Idle"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("question_mark:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5333333, 3.0333333, 4.6, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.2, 0), Vector3(0, 0, 0), Vector3(0, 0.2, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("question_mark:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bxt33"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("question_mark:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("question_mark:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_njtqa"]
+_data = {
+&"Idle": SubResource("Animation_wnfou"),
+&"RESET": SubResource("Animation_bxt33")
+}
+
+[node name="InfoPoint" type="Node3D" unique_id=317136622]
+transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, 0, 0, 0)
+script = ExtResource("1_aogg2")
+
+[node name="question_mark" parent="." unique_id=1446924972 instance=ExtResource("2_dsmg6")]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1039984725]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=810755219]
+transform = Transform3D(0.95395285, 0, 0.29995665, 0, 1, 0, -0.29995665, 0, 0.95395285, 0, 0.21659112, 0)
+shape = SubResource("SphereShape3D_fa6cy")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1144874659]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.893678, -0.014991284)
+billboard = 1
+text = "Press E"
+font = ExtResource("3_2i0kd")
+outline_size = 20
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1210535024]
+libraries/ = SubResource("AnimationLibrary_njtqa")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

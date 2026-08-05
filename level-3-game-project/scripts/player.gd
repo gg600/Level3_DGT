@@ -1,7 +1,8 @@
 extends CharacterBody3D
 
 var speed = WALK_SPEED
-const SPRINT_SPEED = 80.0
+var current_interactable = null
+const SPRINT_SPEED = 60.0
 const WALK_SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const SPRINT_JUMP = 20
@@ -29,9 +30,22 @@ func _unhandled_input(event):
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
+		
+	if event.is_action_pressed("interact"):
+
+		var ui = get_tree().current_scene.get_node("InteractionUI")
+
+		if ui.is_open():
+			ui.hide_information()
+		elif current_interactable:
+			current_interactable.interact()
 
 
 func _physics_process(delta):
+	
+	if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
+		return
+	
 	# Gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta

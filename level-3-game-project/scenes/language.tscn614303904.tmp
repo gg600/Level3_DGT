@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dwm4it5k0t47c"]
 
-[ext_resource type="Script" uid="uid://ba1dicbvyqf2c" path="res://scripts/language_menu.gd" id="1_yrgbr"]
+[ext_resource type="Script" uid="uid://ba1dicbvyqf2c" path="res://scripts/instructions.gd" id="1_yrgbr"]
 [ext_resource type="FontFile" uid="uid://bij0sgkky0no5" path="res://assests/Fonts/static/Lora-Regular.ttf" id="2_bttfc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_byx4f"]
@@ -64,7 +64,7 @@ theme_override_font_sizes/font_size = 60
 text = "Languge"
 horizontal_alignment = 1
 
-[node name="Pick" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1421729860]
+[node name="Confirmation" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1421729860]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_bttfc")
