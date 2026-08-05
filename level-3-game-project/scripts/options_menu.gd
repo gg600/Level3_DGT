@@ -10,6 +10,6 @@ func _on_back_to_menu_pressed():
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 func update_language():
-	$PanelContainer/VBoxContainer/Instructions.text = LanguageManager.get_text("instructions")
-	$PanelContainer/VBoxContainer/Confirmation.text = LanguageManager.get_text("instructions_info")
+	$PanelContainer/VBoxContainer/Sound.text = LanguageManager.get_text("sound_options")
+	$PanelContainer/VBoxContainer/Confirmation.text = LanguageManager.get_text("options_info")
 	$"PanelContainer/VBoxContainer/HBoxContainer/Back to Menu".text = LanguageManager.get_text("back_to_menu")

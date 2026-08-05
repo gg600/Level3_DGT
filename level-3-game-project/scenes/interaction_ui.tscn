@@ -33,6 +33,7 @@ theme_override_fonts/font = ExtResource("2_rqdfo")
 theme_override_font_sizes/font_size = 200
 text = "Example Title"
 horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="Description" type="Label" parent="Panel/VBoxContainer" unique_id=445627759]
 custom_minimum_size = Vector2(20, 0)
@@ -43,18 +44,17 @@ text = "YAPAPAPAPPAp this is my discritpopnm tnhsi what ha[[ems i dont really kn
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="Control" type="Control" parent="Panel/VBoxContainer" unique_id=1995637925]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer" unique_id=1852335352]
-layout_mode = 2
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1852335352]
+layout_mode = 0
+offset_top = 832.0
+offset_right = 1920.0
+offset_bottom = 1075.0
 theme_override_constants/margin_bottom = 30
 
-[node name="CloseButton" type="Button" parent="Panel/VBoxContainer/MarginContainer" unique_id=1064894874]
+[node name="CloseButton" type="Button" parent="Panel/MarginContainer" unique_id=1064894874]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_djgin")
 theme_override_font_sizes/font_size = 160
 text = "Close"
 
-[connection signal="pressed" from="Panel/VBoxContainer/MarginContainer/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/CloseButton" to="." method="_on_close_button_pressed"]

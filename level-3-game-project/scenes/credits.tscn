@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bx1s772wig2a8"]
 
-[ext_resource type="Script" uid="uid://ba1dicbvyqf2c" path="res://scripts/instructions.gd" id="1_2ckv8"]
+[ext_resource type="Script" uid="uid://bugechxc5vk77" path="res://scripts/credits.gd" id="1_2ckv8"]
 [ext_resource type="FontFile" uid="uid://bij0sgkky0no5" path="res://assests/Fonts/static/Lora-Regular.ttf" id="2_0ctdu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2fbfq"]
@@ -55,7 +55,7 @@ text = "
 Credits (Placeholder)"
 horizontal_alignment = 1
 
-[node name="Confirmation" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1145655935]
+[node name="Credit info" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1145655935]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_0ctdu")

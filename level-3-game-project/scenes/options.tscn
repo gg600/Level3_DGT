@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://be31cnw42rsgo"]
 
-[ext_resource type="Script" uid="uid://ba1dicbvyqf2c" path="res://scripts/instructions.gd" id="1_yjkok"]
+[ext_resource type="Script" uid="uid://2n81rpmopw0i" path="res://scripts/options_menu.gd" id="1_yjkok"]
 [ext_resource type="FontFile" uid="uid://bij0sgkky0no5" path="res://assests/Fonts/static/Lora-Regular.ttf" id="2_2iy26"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kv8mn"]

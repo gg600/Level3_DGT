@@ -71,8 +71,8 @@ shader_parameter/cirrus_absorption = 2.0
 shader_parameter/cirrus_sky_tint_fade = 0.5
 shader_parameter/cirrus_size = 1.0
 shader_parameter/cirrus_uv = Vector2(0.16, 0.11)
-shader_parameter/cirrus_position1 = Vector2(0.70258176, 0.70258176)
-shader_parameter/cirrus_position2 = Vector2(0.70258176, 0.70258176)
+shader_parameter/cirrus_position1 = Vector2(0.84528095, 0.84528095)
+shader_parameter/cirrus_position2 = Vector2(0.84528095, 0.84528095)
 shader_parameter/cirrus_texture = ExtResource("3_dss4m")
 shader_parameter/cumulus_visible = true
 shader_parameter/cumulus_intensity = 0.6
@@ -82,7 +82,7 @@ shader_parameter/cumulus_absorption = 2.0
 shader_parameter/cumulus_noise_freq = 2.7
 shader_parameter/cumulus_sky_tint_fade = 0.0
 shader_parameter/cumulus_size = 0.5
-shader_parameter/cumulus_position = Vector2(3.5131214, 3.5131214)
+shader_parameter/cumulus_position = Vector2(4.226979, 4.226979)
 shader_parameter/cumulus_texture = ExtResource("4_7t5mc")
 shader_parameter/cumulus_partial_mie_phase = Vector3(0.957564, 1.042436, 0.412)
 shader_parameter/cumulus_mie_intensity = 1.0
@@ -179,7 +179,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -227.85013, 18.165823, 153.16
 
 [node name="PauseMenu" type="Control" parent="." unique_id=89524767]
 process_mode = 3
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -251,7 +250,7 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_4mrxx")
 text = "Options"
 
-[node name="Quit" type="Button" parent="PauseMenu/PausePanel/VBoxContainer" unique_id=1700322011]
+[node name="Main Menu" type="Button" parent="PauseMenu/PausePanel/VBoxContainer" unique_id=1700322011]
 custom_minimum_size = Vector2(660, 84)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -279,7 +278,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_71j4m")
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="Sound" type="Label" parent="PauseMenu/OptionsPanel/VBoxContainer" unique_id=491255034]
+[node name="Sound Options" type="Label" parent="PauseMenu/OptionsPanel/VBoxContainer" unique_id=491255034]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_71j4m")
@@ -288,7 +287,7 @@ text = "
 Sound/Options (Placeholder)"
 horizontal_alignment = 1
 
-[node name="Confirmation" type="Label" parent="PauseMenu/OptionsPanel/VBoxContainer" unique_id=686694756]
+[node name="Options Info" type="Label" parent="PauseMenu/OptionsPanel/VBoxContainer" unique_id=686694756]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_71j4m")
@@ -350,7 +349,7 @@ layout_mode = 2
 theme_override_constants/separation = 13
 alignment = 1
 
-[node name="Return" type="Button" parent="PauseMenu/ConfirmationPanel/VBoxContainer/HBoxContainer" unique_id=724123942]
+[node name="Return to pause" type="Button" parent="PauseMenu/ConfirmationPanel/VBoxContainer/HBoxContainer" unique_id=724123942]
 custom_minimum_size = Vector2(280, 80)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_71j4m")
@@ -461,18 +460,30 @@ japanese_information = "運動場では、ラグビー、サッカー、陸上�
 
 [node name="AstroCourts" parent="InfoPoints" unique_id=1140759791 instance=ExtResource("16_dss4m")]
 transform = Transform3D(2.77836, 0, 0.34744278, 0, 2.8000002, 0, -0.34744278, 0, 2.77836, -451.19354, 19.218742, 356.51938)
+english_title = "Astro Courts"
+english_information = "The Astro Courts are outdoor artificial turf courts used for PE classes, training sessions, and sports such as netball, tennis, and other activities."
+japanese_title = "アストロコート"
+japanese_information = "アストロコートは人工芝の屋外コートです。体育の授業や部活動、ネットボールやテニスなどのスポーツに利用されます。"
 
 [node name="CatholicChapel" parent="InfoPoints" unique_id=332931578 instance=ExtResource("16_dss4m")]
 transform = Transform3D(-0.14439243, 0, -2.7962744, 0, 2.8, 0, 2.7962744, 0, -0.14439243, -455.9557, 19.853512, 301.15796)
+english_title = "Chapel"
+english_information = "The Chapel is a place for prayer, reflection, liturgies, and Catholic celebrations."
+japanese_title = "チャペル"
+japanese_information = "チャペルは祈り、ミサ、学校の宗教行事、静かに考えるための場所です。"
 
 [node name="UniformShop" parent="InfoPoints" unique_id=1139991641 instance=ExtResource("16_dss4m")]
 transform = Transform3D(-1.0016956, 0, -2.6146905, 0, 2.8, 0, 2.6146905, 0, -1.0016956, -627.78174, 18.564873, 479.99814)
+english_title = "Uniform Shop"
+english_information = "The Uniform Shop is where students can purchase school uniforms, sports uniforms, and other approved school clothing and accessories."
+japanese_title = "制服ショップ"
+japanese_information = "制服ショップでは、学校の制服やスポーツユニフォーム、学校指定の衣類や用品を購入できます。"
 
 [node name="InteractionUI" parent="." unique_id=986432447 instance=ExtResource("17_7t5mc")]
 
 [connection signal="pressed" from="PauseMenu/PausePanel/VBoxContainer/Resume" to="PauseMenu" method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseMenu/PausePanel/VBoxContainer/Options" to="PauseMenu" method="_on_options_pressed"]
-[connection signal="pressed" from="PauseMenu/PausePanel/VBoxContainer/Quit" to="PauseMenu" method="_on_quit_pressed"]
+[connection signal="pressed" from="PauseMenu/PausePanel/VBoxContainer/Main Menu" to="PauseMenu" method="_on_quit_pressed"]
 [connection signal="pressed" from="PauseMenu/OptionsPanel/VBoxContainer/HBoxContainer/Return" to="PauseMenu" method="_on_return_pressed"]
-[connection signal="pressed" from="PauseMenu/ConfirmationPanel/VBoxContainer/HBoxContainer/Return" to="PauseMenu" method="_on_return_pressed"]
+[connection signal="pressed" from="PauseMenu/ConfirmationPanel/VBoxContainer/HBoxContainer/Return to pause" to="PauseMenu" method="_on_return_pressed"]
 [connection signal="pressed" from="PauseMenu/ConfirmationPanel/VBoxContainer/HBoxContainer/Main Menu" to="PauseMenu" method="_on_main_menu_pressed"]

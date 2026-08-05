@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cpsc6vlav3yn1"]
 
-[ext_resource type="Script" uid="uid://ba1dicbvyqf2c" path="res://scripts/instructions.gd" id="1_nisbi"]
+[ext_resource type="Script" uid="uid://n06hrq62wy5j" path="res://scripts/instructions.gd" id="1_nisbi"]
 [ext_resource type="FontFile" uid="uid://bij0sgkky0no5" path="res://assests/Fonts/static/Lora-Regular.ttf" id="2_njqp3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c00ax"]
@@ -60,7 +60,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_njqp3")
 theme_override_font_sizes/font_size = 32
-text = "Are you sure you want to quit?"
+text = "Are you sure you want to quit"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=466528423]
