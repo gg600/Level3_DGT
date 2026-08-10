@@ -40,7 +40,7 @@ var translations = {
 		Use what you discover to become familiar with the campus.
 
 		Enjoy exploring!",
-		"options_info": "needs to be added",
+		"options_info": "Adjust the volume of the game's background music.",
 		"credits_info": "Third-Party Assets
 
 		Sky3D (Dynamic Day/Night System)
@@ -84,7 +84,7 @@ var translations = {
 		キャンパスに慣れるために、さまざまな場所を探索してください。
 
 		楽しく探索しましょう！",
-		"options_info": "needs to be added",
+		"options_info": "ゲームのBGMの音量を調整します。",
 		"credits_info": "サードパーティアセット
 
 		Sky3D（昼夜サイクルシステム）

@@ -5,6 +5,8 @@ func _ready() -> void:
 	_create_trimesh_colliders($"first design proto")
 	LanguageManager.language_changed.connect(update_language)
 	update_language()
+	
+	$PauseMenu/OptionsPanel/VBoxContainer/HSlider.value = MusicManager.music_volume
 
 func _create_trimesh_colliders(root: Node) -> void:
 	for child in root.get_children():

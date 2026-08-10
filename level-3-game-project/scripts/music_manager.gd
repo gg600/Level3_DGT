@@ -8,10 +8,40 @@ extends Node
 @export var menu_volume_db := 0.0
 @export var game_volume_db := -8.0
 
+var music_volume := 50.0
+var secret_boost := false
+
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
+
+	set_music_volume(music_volume)
 	play_menu_music()
+
+
+func set_music_volume(value: float):
+	music_volume = value
+	secret_boost = false
+
+	var music_bus = AudioServer.get_bus_index("Music")
+
+	if value <= 0:
+		AudioServer.set_bus_volume_db(music_bus, -80.0)
+	else:
+		AudioServer.set_bus_volume_db(
+			music_bus,
+			linear_to_db(value / 100.0)
+		)
+
+
+func activate_secret_boost():
+	secret_boost = true
+	music_volume = 100.0
+
+	var music_bus = AudioServer.get_bus_index("Music")
+
+	# +6 dB = approximately twice the linear amplitude
+	AudioServer.set_bus_volume_db(music_bus, linear_to_db(4.0))
 
 
 func play_menu_music():

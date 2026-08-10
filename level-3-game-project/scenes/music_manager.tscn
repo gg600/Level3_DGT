@@ -9,8 +9,9 @@ process_mode = 3
 script = ExtResource("1_jd6i5")
 menu_music = ExtResource("2_yodp2")
 game_music = ExtResource("3_xcw26")
-menu_volume_db = 4.0
-game_volume_db = -4.0
+menu_volume_db = 8.0
+game_volume_db = 0.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2128894429]
 autoplay = true
+bus = &"Music"

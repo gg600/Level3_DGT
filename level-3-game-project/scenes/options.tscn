@@ -2,9 +2,16 @@
 
 [ext_resource type="Script" uid="uid://2n81rpmopw0i" path="res://scripts/options_menu.gd" id="1_yjkok"]
 [ext_resource type="FontFile" uid="uid://bij0sgkky0no5" path="res://assests/Fonts/static/Lora-Regular.ttf" id="2_2iy26"]
+[ext_resource type="Texture2D" uid="uid://bl0iph8ct6xly" path="res://assests/textures/svg/grabber.svg" id="3_kv8mn"]
+[ext_resource type="Texture2D" uid="uid://co52miuk064ol" path="res://assests/textures/svg/grabber_highlight.svg" id="4_1sggn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kv8mn"]
 bg_color = Color(0.8089983, 0.8089983, 0.8089982, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yjkok"]
+bg_color = Color(0, 0.16197696, 0.30503866, 1)
+expand_margin_top = 18.0
+expand_margin_bottom = 18.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1sggn"]
 bg_color = Color(0.46834213, 0, 0, 1)
@@ -44,7 +51,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_kv8mn")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=87390487]
 layout_mode = 2
-theme_override_constants/separation = 16
+theme_override_constants/separation = 48
 
 [node name="Sound" type="Label" parent="PanelContainer/VBoxContainer" unique_id=924882003]
 layout_mode = 2
@@ -63,6 +70,16 @@ theme_override_font_sizes/font_size = 32
 text = "Are you sure you want to quit?"
 horizontal_alignment = 1
 
+[node name="HSlider" type="HSlider" parent="PanelContainer/VBoxContainer" unique_id=522379113]
+custom_minimum_size = Vector2(800, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_icons/grabber = ExtResource("3_kv8mn")
+theme_override_icons/grabber_highlight = ExtResource("4_1sggn")
+theme_override_styles/slider = SubResource("StyleBoxFlat_yjkok")
+step = 5.0
+value = 50.0
+
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=647433185]
 layout_mode = 2
 theme_override_constants/separation = 13
@@ -76,4 +93,14 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_1sggn")
 text = "Back to Menu"
 
+[node name="SecretButton" type="Button" parent="." unique_id=1304446158]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1098.0
+offset_top = 340.0
+offset_right = 1129.0
+offset_bottom = 373.0
+
+[connection signal="value_changed" from="PanelContainer/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/Back to Menu" to="." method="_on_back_to_menu_pressed"]
+[connection signal="pressed" from="SecretButton" to="." method="_on_secret_button_pressed"]

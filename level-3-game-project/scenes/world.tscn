@@ -16,6 +16,8 @@
 [ext_resource type="Script" uid="uid://b4tkplvh7fq40" path="res://addons/sky_3d/src/SkyDome.gd" id="10_kpybi"]
 [ext_resource type="Script" uid="uid://cjmkcj8hwm7ts" path="res://addons/sky_3d/src/TimeOfDay.gd" id="11_ctatt"]
 [ext_resource type="PackedScene" uid="uid://dbym6d56mk20w" path="res://scenes/info_point.tscn" id="16_dss4m"]
+[ext_resource type="Texture2D" uid="uid://bl0iph8ct6xly" path="res://assests/textures/svg/grabber.svg" id="16_pm21f"]
+[ext_resource type="Texture2D" uid="uid://co52miuk064ol" path="res://assests/textures/svg/grabber_highlight.svg" id="17_2lf6f"]
 [ext_resource type="PackedScene" uid="uid://b13qy3w3c14ox" path="res://scenes/interaction_ui.tscn" id="17_7t5mc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xgqkh"]
@@ -71,8 +73,8 @@ shader_parameter/cirrus_absorption = 2.0
 shader_parameter/cirrus_sky_tint_fade = 0.5
 shader_parameter/cirrus_size = 1.0
 shader_parameter/cirrus_uv = Vector2(0.16, 0.11)
-shader_parameter/cirrus_position1 = Vector2(0.76977587, 0.76977587)
-shader_parameter/cirrus_position2 = Vector2(0.76977587, 0.76977587)
+shader_parameter/cirrus_position1 = Vector2(0.897148, 0.897148)
+shader_parameter/cirrus_position2 = Vector2(0.897148, 0.897148)
 shader_parameter/cirrus_texture = ExtResource("3_dss4m")
 shader_parameter/cumulus_visible = true
 shader_parameter/cumulus_intensity = 0.6
@@ -82,7 +84,7 @@ shader_parameter/cumulus_absorption = 2.0
 shader_parameter/cumulus_noise_freq = 2.7
 shader_parameter/cumulus_sky_tint_fade = 0.0
 shader_parameter/cumulus_size = 0.5
-shader_parameter/cumulus_position = Vector2(3.849262, 3.849262)
+shader_parameter/cumulus_position = Vector2(4.4864454, 4.4864454)
 shader_parameter/cumulus_texture = ExtResource("4_7t5mc")
 shader_parameter/cumulus_partial_mie_phase = Vector3(0.957564, 1.042436, 0.412)
 shader_parameter/cumulus_mie_intensity = 1.0
@@ -122,6 +124,11 @@ bg_color = Color(0, 0.4627451, 0.28235295, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_71j4m"]
 bg_color = Color(0.8089983, 0.8089983, 0.8089982, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7t5mc"]
+bg_color = Color(0, 0.16197696, 0.30503866, 1)
+expand_margin_top = 18.0
+expand_margin_bottom = 18.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7kh3"]
 bg_color = Color(0.46834213, 0, 0, 1)
@@ -188,6 +195,7 @@ grow_vertical = 2
 script = ExtResource("4_k0juu")
 
 [node name="ColorRect" type="ColorRect" parent="PauseMenu" unique_id=378574898]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -197,6 +205,7 @@ grow_vertical = 2
 color = Color(0, 0, 0.18431373, 0.5647059)
 
 [node name="PausePanel" type="PanelContainer" parent="PauseMenu" unique_id=1579820377]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -276,7 +285,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_71j4m")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/OptionsPanel" unique_id=1112788680]
 layout_mode = 2
-theme_override_constants/separation = 16
+theme_override_constants/separation = 48
 
 [node name="Sound Options" type="Label" parent="PauseMenu/OptionsPanel/VBoxContainer" unique_id=491255034]
 layout_mode = 2
@@ -295,6 +304,16 @@ theme_override_font_sizes/font_size = 32
 text = "Are you sure you want to quit?"
 horizontal_alignment = 1
 
+[node name="HSlider" type="HSlider" parent="PauseMenu/OptionsPanel/VBoxContainer" unique_id=1472263510]
+custom_minimum_size = Vector2(800, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_icons/grabber = ExtResource("16_pm21f")
+theme_override_icons/grabber_highlight = ExtResource("17_2lf6f")
+theme_override_styles/slider = SubResource("StyleBoxFlat_7t5mc")
+step = 5.0
+value = 50.0
+
 [node name="HBoxContainer" type="HBoxContainer" parent="PauseMenu/OptionsPanel/VBoxContainer" unique_id=214925773]
 layout_mode = 2
 theme_override_constants/separation = 26
@@ -309,6 +328,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_w7kh3")
 text = "Return"
 
 [node name="ConfirmationPanel" type="PanelContainer" parent="PauseMenu" unique_id=306814160]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -411,8 +431,8 @@ japanese_information = "進路支援では、大学、職業訓練、仕事体�
 
 [node name="LearningSupport" parent="InfoPoints" unique_id=417771737 instance=ExtResource("16_dss4m")]
 transform = Transform3D(0.31993097, 0, -2.7816622, 0, 2.8000004, 0, 2.7816622, 0, 0.31993097, -645.1376, 18.21219, 563.42737)
-english_title = "Student Wellbeing Centre"
-english_information = "The Student Wellbeing Centre provides support for students through counselling, health services, and wellbeing assistance."
+english_title = "Wellbeing Centre"
+english_information = "The Wellbeing Centre provides support for students through counselling, health services, and wellbeing assistance."
 japanese_title = "生徒ウェルビーイングセンター"
 japanese_information = "生徒ウェルビーイングセンターでは、カウンセラーや看護師から健康や生活についてのサポートを受けることができます。"
 
@@ -484,6 +504,7 @@ japanese_information = "制服ショップでは、学校の制服やスポー�
 [connection signal="pressed" from="PauseMenu/PausePanel/VBoxContainer/Resume" to="PauseMenu" method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseMenu/PausePanel/VBoxContainer/Options" to="PauseMenu" method="_on_options_pressed"]
 [connection signal="pressed" from="PauseMenu/PausePanel/VBoxContainer/Main Menu" to="PauseMenu" method="_on_quit_pressed"]
+[connection signal="value_changed" from="PauseMenu/OptionsPanel/VBoxContainer/HSlider" to="PauseMenu" method="_on_h_slider_value_changed"]
 [connection signal="pressed" from="PauseMenu/OptionsPanel/VBoxContainer/HBoxContainer/Return" to="PauseMenu" method="_on_return_pressed"]
 [connection signal="pressed" from="PauseMenu/ConfirmationPanel/VBoxContainer/HBoxContainer/Return to pause" to="PauseMenu" method="_on_return_pressed"]
 [connection signal="pressed" from="PauseMenu/ConfirmationPanel/VBoxContainer/HBoxContainer/Main Menu" to="PauseMenu" method="_on_main_menu_pressed"]
