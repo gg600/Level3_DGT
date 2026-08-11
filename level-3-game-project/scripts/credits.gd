@@ -13,4 +13,4 @@ func _on_back_to_menu_pressed():
 func update_language():
 	$PanelContainer/VBoxContainer/Credits.text = LanguageManager.get_text("credits")
 	$"PanelContainer/VBoxContainer/Credit info".text = LanguageManager.get_text("credits_info")
-	$"PanelContainer/VBoxContainer/HBoxContainer/Back to Menu".text = LanguageManager.get_text("options")
+	$"PanelContainer/VBoxContainer/HBoxContainer/Back to Menu".text = LanguageManager.get_text("back_to_menu")

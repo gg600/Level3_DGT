@@ -5,7 +5,7 @@ var current_interactable = null
 const SPRINT_SPEED = 60.0
 const WALK_SPEED = 5.0
 const JUMP_VELOCITY = 4.5
-const SPRINT_JUMP = 20
+const SPRINT_JUMP = 12
 const SENSITIVITY = 0.008
 
 # bob variables
