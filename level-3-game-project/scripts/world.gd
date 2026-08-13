@@ -6,8 +6,11 @@ func _ready() -> void:
 	LanguageManager.language_changed.connect(update_language)
 	update_language()
 	
-	$PauseMenu/OptionsPanel/VBoxContainer/HSlider.value = MusicManager.music_volume
+	$PauseMenu/OptionsPanel/VBoxContainer/Music.value = MusicManager.music_volume
+	$PauseMenu/OptionsPanel/VBoxContainer/SFX.value = SFXManager.sfx_volume
 
+	
+	
 func _create_trimesh_colliders(root: Node) -> void:
 	for child in root.get_children():
 		_create_trimesh_colliders(child)

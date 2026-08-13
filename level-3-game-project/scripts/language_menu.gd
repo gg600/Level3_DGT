@@ -7,14 +7,17 @@ func _ready():
 
 
 func _on_back_to_menu_pressed():
+	SFXManager.play_mouse_click()
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 
 func _on_english_pressed():
+	SFXManager.play_mouse_click()
 	LanguageManager.set_language("en")
 
 
 func _on_japanese_pressed():
+	SFXManager.play_mouse_click()
 	LanguageManager.set_language("ja")
 
 

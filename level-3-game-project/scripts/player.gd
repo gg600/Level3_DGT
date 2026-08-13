@@ -13,6 +13,12 @@ const BOB_FREQ = 2.0
 const BOB_AMP = 0.08
 var t_bob = 0.0
 
+# Footstep variables
+var footstep_timer = 0.0
+
+const WALK_FOOTSTEP_INTERVAL = 0.5
+const SPRINT_FOOTSTEP_INTERVAL = 0.3
+
 # fov variables
 const BASE_FOV = 75.0
 const FOV_CHANGE = 1.5
@@ -84,6 +90,18 @@ func _physics_process(delta):
 	var velocity_clamped = clamp(velocity.length(), 0.0, SPRINT_SPEED)
 	var target_fov = BASE_FOV + FOV_CHANGE * velocity_clamped
 	camera.fov = lerp(camera.fov, target_fov, delta * 8.0)"
+
+	# Footsteps
+	if is_on_floor() and direction:
+		var footstep_interval = SPRINT_FOOTSTEP_INTERVAL if Input.is_action_pressed("sprint") else WALK_FOOTSTEP_INTERVAL
+		
+		footstep_timer -= delta
+		
+		if footstep_timer <= 0.0:
+			SFXManager.play_footsteps()
+			footstep_timer = footstep_interval
+	else:
+		footstep_timer = 0.0
 
 	move_and_slide()
 

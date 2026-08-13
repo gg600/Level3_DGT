@@ -6,10 +6,11 @@ func _ready():
 	update_language()
 	
 	# Show the current music volume on the slider
-	$PanelContainer/VBoxContainer/HSlider.value = MusicManager.music_volume
-
+	$PanelContainer/VBoxContainer/Music.value = MusicManager.music_volume
+	$PanelContainer/VBoxContainer/SFX.value = SFXManager.sfx_volume
 
 func _on_back_to_menu_pressed():
+	SFXManager.play_mouse_click()
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 
@@ -24,5 +25,10 @@ func _on_h_slider_value_changed(value: float) -> void:
 
 
 func _on_secret_button_pressed() -> void:
-	$PanelContainer/VBoxContainer/HSlider.value = 100
+	SFXManager.play_mouse_click()
+	$PanelContainer/VBoxContainer/Music.value = 100
 	MusicManager.activate_secret_boost()
+
+
+func _on_sfx_value_changed(value):
+	SFXManager.set_sfx_volume(value)
