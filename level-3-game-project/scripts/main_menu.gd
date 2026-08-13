@@ -16,24 +16,30 @@ func update_language():
 	$Credits.text = LanguageManager.get_text("credits")
 
 func _on_new_game_pressed():
+	SFXManager.play_mouse_click()
 	get_tree().change_scene_to_file("res://scenes/world.tscn")
 
 
 func _on_instructions_pressed():
+	SFXManager.play_mouse_click()
 	get_tree().change_scene_to_file("res://scenes/instructions.tscn")
 
 
 func _on_options_pressed():
+	SFXManager.play_mouse_click()
 	get_tree().change_scene_to_file("res://scenes/options.tscn")
 
 
 func _on_language_pressed():
+	SFXManager.play_mouse_click()
 	get_tree().change_scene_to_file("res://scenes/language.tscn")
 
 
 func _on_quit_pressed():
+	SFXManager.play_mouse_click()
 	get_tree().change_scene_to_file("res://scenes/quit.tscn")
 
 
 func _on_credits_pressed():
+	SFXManager.play_mouse_click()
 	get_tree().change_scene_to_file("res://scenes/credits.tscn")

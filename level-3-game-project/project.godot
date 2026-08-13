@@ -19,6 +19,7 @@ config/icon="res://assests/icon.svg"
 
 LanguageManager="*uid://clgbrb1lap8wt"
 MusicManager="*uid://brlhs6jk2if4g"
+SFXManager="*uid://bl0ishn5trl77"
 
 [display]
 

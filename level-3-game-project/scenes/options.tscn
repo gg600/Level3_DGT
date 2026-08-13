@@ -9,7 +9,17 @@
 bg_color = Color(0.8089983, 0.8089983, 0.8089982, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yjkok"]
-bg_color = Color(0, 0.16197696, 0.30503866, 1)
+bg_color = Color(0.14901961, 0.21176471, 0.2901961, 1)
+expand_margin_top = 18.0
+expand_margin_bottom = 18.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e6vpq"]
+bg_color = Color(0.12941177, 0.5882353, 0.9529412, 1)
+expand_margin_top = 18.0
+expand_margin_bottom = 18.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o7i7e"]
+bg_color = Color(0.25882354, 0.64705884, 0.9607843, 1)
 expand_margin_top = 18.0
 expand_margin_bottom = 18.0
 
@@ -51,7 +61,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_kv8mn")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=87390487]
 layout_mode = 2
-theme_override_constants/separation = 48
+theme_override_constants/separation = 36
 
 [node name="Sound" type="Label" parent="PanelContainer/VBoxContainer" unique_id=924882003]
 layout_mode = 2
@@ -67,16 +77,30 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_2iy26")
 theme_override_font_sizes/font_size = 32
-text = "Are you sure you want to quit?"
+text = "Sound what do you want to change"
 horizontal_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="PanelContainer/VBoxContainer" unique_id=522379113]
+[node name="Music" type="HSlider" parent="PanelContainer/VBoxContainer" unique_id=522379113]
 custom_minimum_size = Vector2(800, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_icons/grabber = ExtResource("3_kv8mn")
 theme_override_icons/grabber_highlight = ExtResource("4_1sggn")
 theme_override_styles/slider = SubResource("StyleBoxFlat_yjkok")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_e6vpq")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_o7i7e")
+step = 5.0
+value = 50.0
+
+[node name="SFX" type="HSlider" parent="PanelContainer/VBoxContainer" unique_id=547206769]
+custom_minimum_size = Vector2(800, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_icons/grabber = ExtResource("3_kv8mn")
+theme_override_icons/grabber_highlight = ExtResource("4_1sggn")
+theme_override_styles/slider = SubResource("StyleBoxFlat_yjkok")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_e6vpq")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_o7i7e")
 step = 5.0
 value = 50.0
 
@@ -101,6 +125,7 @@ offset_top = 340.0
 offset_right = 1129.0
 offset_bottom = 373.0
 
-[connection signal="value_changed" from="PanelContainer/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="PanelContainer/VBoxContainer/Music" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="PanelContainer/VBoxContainer/SFX" to="." method="_on_sfx_value_changed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/Back to Menu" to="." method="_on_back_to_menu_pressed"]
 [connection signal="pressed" from="SecretButton" to="." method="_on_secret_button_pressed"]

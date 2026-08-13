@@ -18,6 +18,7 @@ func hide_information():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _on_close_button_pressed():
+	SFXManager.play_mouse_click()
 	hide_information()
 	
 	
