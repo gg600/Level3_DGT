@@ -19,6 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://bl0iph8ct6xly" path="res://assests/textures/svg/grabber.svg" id="16_pm21f"]
 [ext_resource type="Texture2D" uid="uid://co52miuk064ol" path="res://assests/textures/svg/grabber_highlight.svg" id="17_2lf6f"]
 [ext_resource type="PackedScene" uid="uid://b13qy3w3c14ox" path="res://scenes/interaction_ui.tscn" id="17_7t5mc"]
+[ext_resource type="FontFile" uid="uid://bhm8yfyxjxyrl" path="res://assests/Fonts/static/Lora-BoldItalic.ttf" id="20_2lf6f"]
+[ext_resource type="FontFile" uid="uid://c036m35ywonsk" path="res://assests/Fonts/static/Lora-Bold.ttf" id="21_7iits"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xgqkh"]
 shader = ExtResource("2_xo05s")
@@ -73,8 +75,8 @@ shader_parameter/cirrus_absorption = 2.0
 shader_parameter/cirrus_sky_tint_fade = 0.5
 shader_parameter/cirrus_size = 1.0
 shader_parameter/cirrus_uv = Vector2(0.16, 0.11)
-shader_parameter/cirrus_position1 = Vector2(0.8597604, 0.8597604)
-shader_parameter/cirrus_position2 = Vector2(0.8597604, 0.8597604)
+shader_parameter/cirrus_position1 = Vector2(0.59655, 0.59655)
+shader_parameter/cirrus_position2 = Vector2(0.59655, 0.59655)
 shader_parameter/cirrus_texture = ExtResource("3_dss4m")
 shader_parameter/cumulus_visible = true
 shader_parameter/cumulus_intensity = 0.6
@@ -84,7 +86,7 @@ shader_parameter/cumulus_absorption = 2.0
 shader_parameter/cumulus_noise_freq = 2.7
 shader_parameter/cumulus_sky_tint_fade = 0.0
 shader_parameter/cumulus_size = 0.5
-shader_parameter/cumulus_position = Vector2(4.2994127, 4.2994127)
+shader_parameter/cumulus_position = Vector2(18.021357, 18.021357)
 shader_parameter/cumulus_texture = ExtResource("4_7t5mc")
 shader_parameter/cumulus_partial_mie_phase = Vector3(0.957564, 1.042436, 0.412)
 shader_parameter/cumulus_mie_intensity = 1.0
@@ -166,6 +168,12 @@ bg_color = Color(0.15294118, 0.16862746, 0.72156864, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jhx03"]
 bg_color = Color(0.46834213, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xgqkh"]
+bg_color = Color(0.15294118, 0.16862746, 0.72156864, 0.4392157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_munwf"]
+bg_color = Color(0, 0, 0, 0)
 
 [node name="World" type="Node3D" unique_id=1812466907]
 script = ExtResource("1_x8w2n")
@@ -547,6 +555,134 @@ japanese_title = "制服ショップ"
 japanese_information = "制服ショップでは、学校の制服やスポーツユニフォーム、学校指定の衣類や用品を購入できます。"
 
 [node name="InteractionUI" parent="." unique_id=986432447 instance=ExtResource("17_7t5mc")]
+visible = false
+
+[node name="Tab" type="Button" parent="." unique_id=1845604160]
+offset_left = 214.0
+offset_right = 372.0
+offset_bottom = 66.0
+theme_override_fonts/font = ExtResource("20_2lf6f")
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = SubResource("StyleBoxFlat_xgqkh")
+text = "Tab"
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=831067029]
+offset_left = 67.0
+offset_top = 168.0
+offset_right = 594.0
+offset_bottom = 1028.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_munwf")
+
+[node name="ExplorerPanel" type="Panel" parent="PanelContainer" unique_id=1686527590]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="PanelContainer/ExplorerPanel" unique_id=956867445]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 43.0
+offset_right = 413.0
+offset_bottom = 102.0
+theme_override_fonts/font = ExtResource("21_7iits")
+theme_override_font_sizes/font_size = 45
+text = "JPC Explorer"
+
+[node name="Description" type="Label" parent="PanelContainer/ExplorerPanel" unique_id=1022462391]
+layout_mode = 0
+offset_left = -35.0
+offset_top = 134.0
+offset_right = 557.0
+offset_bottom = 303.0
+theme_override_fonts/font = ExtResource("5_71j4m")
+theme_override_font_sizes/font_size = 30
+text = "Explore JPC and discover important locations around the school."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="LocationList" type="VBoxContainer" parent="PanelContainer/ExplorerPanel" unique_id=1247100002]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 274.0
+offset_right = 462.0
+offset_bottom = 850.0
+
+[node name="Astro Courts" type="CheckButton" parent="PanelContainer/ExplorerPanel/LocationList" unique_id=1481349163]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_71j4m")
+theme_override_font_sizes/font_size = 35
+text = "Astro Courts"
+
+[node name="Canteen" type="CheckButton" parent="PanelContainer/ExplorerPanel/LocationList" unique_id=99806978]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_71j4m")
+theme_override_font_sizes/font_size = 35
+text = "Canteen"
+
+[node name="Chapel" type="CheckButton" parent="PanelContainer/ExplorerPanel/LocationList" unique_id=228244797]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_71j4m")
+theme_override_font_sizes/font_size = 35
+text = "Chapel"
+
+[node name="Cooking Room" type="CheckButton" parent="PanelContainer/ExplorerPanel/LocationList" unique_id=383138782]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_71j4m")
+theme_override_font_sizes/font_size = 35
+text = "Cooking Room"
+
+[node name="Gymnasium" type="CheckButton" parent="PanelContainer/ExplorerPanel/LocationList" unique_id=1607285305]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_71j4m")
+theme_override_font_sizes/font_size = 35
+text = "Gymnasium"
+
+[node name="Library" type="CheckButton" parent="PanelContainer/ExplorerPanel/LocationList" unique_id=1700778010]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_71j4m")
+theme_override_font_sizes/font_size = 35
+text = "Library"
+
+[node name="Music Suite" type="CheckButton" parent="PanelContainer/ExplorerPanel/LocationList" unique_id=82781870]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_71j4m")
+theme_override_font_sizes/font_size = 35
+text = "Music Suite"
+
+[node name="Sports Fields" type="CheckButton" parent="PanelContainer/ExplorerPanel/LocationList" unique_id=567195229]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_71j4m")
+theme_override_font_sizes/font_size = 35
+text = "Sports Fields"
+
+[node name="Student Reception" type="CheckButton" parent="PanelContainer/ExplorerPanel/LocationList" unique_id=2143350889]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_71j4m")
+theme_override_font_sizes/font_size = 35
+text = "Student Reception"
+
+[node name="Whare Haoini Paora" type="CheckButton" parent="PanelContainer/ExplorerPanel/LocationList" unique_id=1072729532]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_71j4m")
+theme_override_font_sizes/font_size = 35
+text = "Whare Haoini Paora "
+
+[node name="Progress" type="Label" parent="PanelContainer/ExplorerPanel" unique_id=1849887247]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="LocationNotification" type="Panel" parent="." unique_id=907476622]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LocationTitle" type="Label" parent="LocationNotification" unique_id=1433831630]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="LocationProgress" type="Label" parent="LocationNotification" unique_id=1772261845]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
 
 [connection signal="pressed" from="PauseMenu/PausePanel/VBoxContainer/Resume" to="PauseMenu" method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseMenu/PausePanel/VBoxContainer/Options" to="PauseMenu" method="_on_options_pressed"]

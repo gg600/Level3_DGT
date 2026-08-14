@@ -37,7 +37,7 @@ func _on_area_3d_body_exited(body):
 
 
 func interact():
-	SFXManager.play_success()
+	SFXManager.play_interface()
 	var ui = get_tree().current_scene.get_node("InteractionUI")
 
 	if LanguageManager.current_language == "ja":

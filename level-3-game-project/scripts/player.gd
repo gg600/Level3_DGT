@@ -16,8 +16,8 @@ var t_bob = 0.0
 # Footstep variables
 var footstep_timer = 0.0
 
-const WALK_FOOTSTEP_INTERVAL = 0.5
-const SPRINT_FOOTSTEP_INTERVAL = 0.3
+const WALK_FOOTSTEP_INTERVAL = 0.45
+const SPRINT_FOOTSTEP_INTERVAL = 0.28
 
 # fov variables
 const BASE_FOV = 75.0
@@ -102,6 +102,7 @@ func _physics_process(delta):
 			footstep_timer = footstep_interval
 	else:
 		footstep_timer = 0.0
+		SFXManager.stop_footsteps()
 
 	move_and_slide()
 

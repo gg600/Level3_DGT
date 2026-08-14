@@ -7,3 +7,5 @@ script = ExtResource("1_wd8mt")
 
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="." unique_id=1617085660]
 bus = &"SFX"
+
+[node name="FootstepPlayer" type="AudioStreamPlayer" parent="." unique_id=1297800072]
