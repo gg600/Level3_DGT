@@ -1,5 +1,8 @@
 extends Node3D
 
+@export_category("Explorer")
+@export var explorer_id := ""
+
 @export_category("English")
 @export var english_title := "Science Block"
 
@@ -38,9 +41,14 @@ func _on_area_3d_body_exited(body):
 
 func interact():
 	SFXManager.play_interface()
+
 	var ui = get_tree().current_scene.get_node("InteractionUI")
 
 	if LanguageManager.current_language == "ja":
 		ui.show_information(japanese_title, japanese_information)
 	else:
 		ui.show_information(english_title, english_information)
+
+	# Mark this location as discovered
+	if explorer_id != "":
+		ExplorerManager.discover_location(explorer_id)

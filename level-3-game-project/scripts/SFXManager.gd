@@ -13,7 +13,7 @@ var sfx_volume := 50.0
 
 # Individual sound volumes
 var footsteps_volume_db := 18.0
-var success_volume_db := 0.0
+var success_volume_db := 10.0
 var mouse_click_volume_db := 0.0
 var interface_volume_db := 0.0
 
