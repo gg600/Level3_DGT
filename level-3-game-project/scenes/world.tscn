@@ -23,6 +23,7 @@
 [ext_resource type="FontFile" uid="uid://c036m35ywonsk" path="res://assests/Fonts/static/Lora-Bold.ttf" id="21_7iits"]
 [ext_resource type="Script" uid="uid://f5o5err8hwxd" path="res://scripts/gameplay_ui.gd" id="21_oo54l"]
 [ext_resource type="FontFile" uid="uid://diht2v1i3g46y" path="res://assests/Fonts/static/Lora-Italic.ttf" id="23_kpybi"]
+[ext_resource type="Script" uid="uid://ckost77c3g3t2" path="res://scripts/quick_tips.gd" id="24_ctatt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xgqkh"]
 shader = ExtResource("2_xo05s")
@@ -77,8 +78,8 @@ shader_parameter/cirrus_absorption = 2.0
 shader_parameter/cirrus_sky_tint_fade = 0.5
 shader_parameter/cirrus_size = 1.0
 shader_parameter/cirrus_uv = Vector2(0.16, 0.11)
-shader_parameter/cirrus_position1 = Vector2(0.2195176, 0.2195176)
-shader_parameter/cirrus_position2 = Vector2(0.2195176, 0.2195176)
+shader_parameter/cirrus_position1 = Vector2(0.7026164, 0.7026164)
+shader_parameter/cirrus_position2 = Vector2(0.7026164, 0.7026164)
 shader_parameter/cirrus_texture = ExtResource("3_dss4m")
 shader_parameter/cumulus_visible = true
 shader_parameter/cumulus_intensity = 0.6
@@ -88,7 +89,7 @@ shader_parameter/cumulus_absorption = 2.0
 shader_parameter/cumulus_noise_freq = 2.7
 shader_parameter/cumulus_sky_tint_fade = 0.0
 shader_parameter/cumulus_size = 0.5
-shader_parameter/cumulus_position = Vector2(16.129385, 16.129385)
+shader_parameter/cumulus_position = Vector2(8.514789, 8.514789)
 shader_parameter/cumulus_texture = ExtResource("4_7t5mc")
 shader_parameter/cumulus_partial_mie_phase = Vector3(0.957564, 1.042436, 0.412)
 shader_parameter/cumulus_mie_intensity = 1.0
@@ -180,6 +181,20 @@ bg_color = Color(0, 0, 0, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ts3gi"]
 bg_color = Color(0.09019608, 0.13725491, 0.23921569, 0.8)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0nbtd"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(0.09019608, 0.13725491, 0.23921569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37qwj"]
+bg_color = Color(0.29102448, 0.39149737, 0.6066609, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
 [node name="World" type="Node3D" unique_id=1812466907]
 script = ExtResource("1_x8w2n")
 
@@ -217,7 +232,7 @@ current_time = 12.0
 day = 2
 
 [node name="CharacterBody3D" parent="." unique_id=537846371 instance=ExtResource("2_rwgxs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -600.48126, 25.580975, 296.17517)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -610.63574, 20.874212, 446.29956)
 
 [node name="first design proto" parent="." unique_id=648212325 instance=ExtResource("2_4wyf3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -227.85013, 18.165823, 153.16185)
@@ -725,6 +740,52 @@ theme_override_fonts/font = ExtResource("23_kpybi")
 theme_override_font_sizes/font_size = 25
 text = "Library — 1 / 10 locations found"
 horizontal_alignment = 1
+
+[node name="QuickTips" type="PanelContainer" parent="GameplayUI" unique_id=585477049]
+custom_minimum_size = Vector2(900, 360)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 516.0
+offset_top = 585.0
+offset_right = 1479.0
+offset_bottom = 945.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0nbtd")
+script = ExtResource("24_ctatt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameplayUI/QuickTips" unique_id=1993222883]
+layout_mode = 2
+theme_override_constants/separation = 36
+
+[node name="Title" type="Label" parent="GameplayUI/QuickTips/VBoxContainer" unique_id=1992888575]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_71j4m")
+theme_override_font_sizes/font_size = 32
+text = "Quick Tips"
+horizontal_alignment = 1
+
+[node name="SprintTip" type="Label" parent="GameplayUI/QuickTips/VBoxContainer" unique_id=2077440550]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_71j4m")
+theme_override_font_sizes/font_size = 32
+text = "Hold SHIFT to sprint and move faster."
+
+[node name="InteractTip" type="Label" parent="GameplayUI/QuickTips/VBoxContainer" unique_id=55945486]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_71j4m")
+theme_override_font_sizes/font_size = 32
+text = "Press E near an information point to learn about that location."
+
+[node name="GotItButton" type="Button" parent="GameplayUI/QuickTips/VBoxContainer" unique_id=1182735066]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("5_71j4m")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_37qwj")
+text = "Got It — Start Exploring"
 
 [connection signal="pressed" from="PauseMenu/PausePanel/VBoxContainer/Resume" to="PauseMenu" method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseMenu/PausePanel/VBoxContainer/Options" to="PauseMenu" method="_on_options_pressed"]
