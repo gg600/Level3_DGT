@@ -19,6 +19,11 @@
 [ext_resource type="Texture2D" uid="uid://bl0iph8ct6xly" path="res://assests/textures/svg/grabber.svg" id="16_pm21f"]
 [ext_resource type="Texture2D" uid="uid://co52miuk064ol" path="res://assests/textures/svg/grabber_highlight.svg" id="17_2lf6f"]
 [ext_resource type="PackedScene" uid="uid://b13qy3w3c14ox" path="res://scenes/interaction_ui.tscn" id="17_7t5mc"]
+[ext_resource type="FontFile" uid="uid://bhm8yfyxjxyrl" path="res://assests/Fonts/static/Lora-BoldItalic.ttf" id="20_2lf6f"]
+[ext_resource type="FontFile" uid="uid://c036m35ywonsk" path="res://assests/Fonts/static/Lora-Bold.ttf" id="21_7iits"]
+[ext_resource type="Script" uid="uid://f5o5err8hwxd" path="res://scripts/gameplay_ui.gd" id="21_oo54l"]
+[ext_resource type="FontFile" uid="uid://diht2v1i3g46y" path="res://assests/Fonts/static/Lora-Italic.ttf" id="23_kpybi"]
+[ext_resource type="Script" uid="uid://ckost77c3g3t2" path="res://scripts/quick_tips.gd" id="24_ctatt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xgqkh"]
 shader = ExtResource("2_xo05s")
@@ -73,8 +78,8 @@ shader_parameter/cirrus_absorption = 2.0
 shader_parameter/cirrus_sky_tint_fade = 0.5
 shader_parameter/cirrus_size = 1.0
 shader_parameter/cirrus_uv = Vector2(0.16, 0.11)
-shader_parameter/cirrus_position1 = Vector2(0.8597604, 0.8597604)
-shader_parameter/cirrus_position2 = Vector2(0.8597604, 0.8597604)
+shader_parameter/cirrus_position1 = Vector2(0.7026164, 0.7026164)
+shader_parameter/cirrus_position2 = Vector2(0.7026164, 0.7026164)
 shader_parameter/cirrus_texture = ExtResource("3_dss4m")
 shader_parameter/cumulus_visible = true
 shader_parameter/cumulus_intensity = 0.6
@@ -84,7 +89,7 @@ shader_parameter/cumulus_absorption = 2.0
 shader_parameter/cumulus_noise_freq = 2.7
 shader_parameter/cumulus_sky_tint_fade = 0.0
 shader_parameter/cumulus_size = 0.5
-shader_parameter/cumulus_position = Vector2(4.2994127, 4.2994127)
+shader_parameter/cumulus_position = Vector2(8.514789, 8.514789)
 shader_parameter/cumulus_texture = ExtResource("4_7t5mc")
 shader_parameter/cumulus_partial_mie_phase = Vector3(0.957564, 1.042436, 0.412)
 shader_parameter/cumulus_mie_intensity = 1.0
@@ -167,6 +172,29 @@ bg_color = Color(0.15294118, 0.16862746, 0.72156864, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jhx03"]
 bg_color = Color(0.46834213, 0, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xgqkh"]
+bg_color = Color(0.15294118, 0.16862746, 0.72156864, 0.4392157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_munwf"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ts3gi"]
+bg_color = Color(0.09019608, 0.13725491, 0.23921569, 0.8)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0nbtd"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(0.09019608, 0.13725491, 0.23921569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37qwj"]
+bg_color = Color(0.29102448, 0.39149737, 0.6066609, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
 [node name="World" type="Node3D" unique_id=1812466907]
 script = ExtResource("1_x8w2n")
 
@@ -204,7 +232,7 @@ current_time = 12.0
 day = 2
 
 [node name="CharacterBody3D" parent="." unique_id=537846371 instance=ExtResource("2_rwgxs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -600.48126, 25.580975, 296.17517)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -610.63574, 20.874212, 446.29956)
 
 [node name="first design proto" parent="." unique_id=648212325 instance=ExtResource("2_4wyf3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -227.85013, 18.165823, 153.16185)
@@ -436,6 +464,7 @@ text = "Main Menu"
 
 [node name="Library" parent="InfoPoints" unique_id=317136622 instance=ExtResource("16_dss4m")]
 transform = Transform3D(2.8, 0, 0, 0, 2.8, 0, 0, 0, 2.8, -662.8511, 17.824623, 521.88446)
+explorer_id = "library"
 english_title = "Library"
 english_information = "The library is a quiet place for reading, studying, completing homework, and finding learning resources."
 japanese_title = "図書館"
@@ -443,6 +472,7 @@ japanese_information = "図書館は読書、勉強、宿題、資料を探す�
 
 [node name="Canteen" parent="InfoPoints" unique_id=1186463243 instance=ExtResource("16_dss4m")]
 transform = Transform3D(2.7787642, 0, -0.34419277, 0, 2.8, 0, 0.34419277, 0, 2.7787642, -606.24896, 18.21219, 505.24606)
+explorer_id = "canteen"
 english_title = "Canteen"
 english_information = "The canteen sells food and drinks during interval and lunchtime."
 japanese_title = "食堂"
@@ -450,6 +480,7 @@ japanese_information = "食堂では、休み時間や昼休みに食べ物や�
 
 [node name="Whare" parent="InfoPoints" unique_id=385312839 instance=ExtResource("16_dss4m")]
 transform = Transform3D(-1.1828883, 0, -2.5378683, 0, 2.8, 0, 2.5378683, 0, -1.1828883, -580.9943, 18.21219, 469.3652)
+explorer_id = "whare_haoini_paora"
 english_title = "Whare Hoani Paora"
 english_information = "Whare Hoani Paora is a space for Māori culture, Te Reo Māori, Tikanga Māori, and connecting with whānau."
 japanese_title = "ホアレ・ホアニ・パオラ"
@@ -464,6 +495,7 @@ japanese_information = "受付は学校の入口にある場所です。遅刻�
 
 [node name="StudentReception" parent="InfoPoints" unique_id=1551247775 instance=ExtResource("16_dss4m")]
 transform = Transform3D(2.649798, 0, -0.9047491, 0, 2.8000004, 0, 0.9047491, 0, 2.649798, -630.637, 18.21219, 499.02188)
+explorer_id = "student_reception"
 english_title = "Student Reception"
 english_information = "Student Reception is a place where students can go for help, ask questions, and receive support with issues related to school life."
 japanese_title = "生徒受付"
@@ -485,6 +517,7 @@ japanese_information = "生徒ウェルビーイングセンターでは、カ�
 
 [node name="CookingRoom" parent="InfoPoints" unique_id=913325110 instance=ExtResource("16_dss4m")]
 transform = Transform3D(-0.6256721, 0, 2.7292004, 0, 2.8000004, 0, -2.7292004, 0, -0.6256721, -658.47375, 18.21219, 571.90076)
+explorer_id = "cooking_room"
 english_title = "Cooking Room"
 english_information = "The Cooking Room is used for Food Technology classes where students learn cooking and food preparation skills."
 japanese_title = "調理室"
@@ -492,6 +525,7 @@ japanese_information = "調理室では、料理、食品準備、Food Technolog
 
 [node name="MusicSuite" parent="InfoPoints" unique_id=379850623 instance=ExtResource("16_dss4m")]
 transform = Transform3D(-2.7652824, 0, -0.43956143, 0, 2.8000004, 0, 0.43956143, 0, -2.7652824, -454.9384, 19.877703, 277.29965)
+explorer_id = "music_suite"
 english_title = "Music Suite"
 english_information = "The Music Suite is used for music lessons, instrument practice, rehearsals, and performances."
 japanese_title = "音楽室"
@@ -513,6 +547,7 @@ japanese_information = "ダンスルームでは、ダンスの技術、振り�
 
 [node name="Gymnasium" parent="InfoPoints" unique_id=1670678464 instance=ExtResource("16_dss4m")]
 transform = Transform3D(-2.6531746, 0, 0.89479935, 0, 2.8000007, 0, -0.89479935, 0, -2.6531746, -537.4874, 17.97025, 510.2032)
+explorer_id = "gymnasium"
 english_title = "Gymnasium"
 english_information = "The Gymnasium is used for PE classes, sports training, assemblies, and school events."
 japanese_title = "体育館"
@@ -520,6 +555,7 @@ japanese_information = "体育館では、体育の授業、スポーツ活動�
 
 [node name="SportsField" parent="InfoPoints" unique_id=1688988645 instance=ExtResource("16_dss4m")]
 transform = Transform3D(-1.2588351, 0, -2.5010672, 0, 2.8000007, 0, 2.5010672, 0, -1.2588351, -422.5412, 18.930775, 425.1795)
+explorer_id = "sports_fields"
 english_title = "Sports Fields"
 english_information = "The sports fields are used for rugby, football, athletics, and other outdoor activities."
 japanese_title = "運動場"
@@ -527,6 +563,7 @@ japanese_information = "運動場では、ラグビー、サッカー、陸上�
 
 [node name="AstroCourts" parent="InfoPoints" unique_id=1140759791 instance=ExtResource("16_dss4m")]
 transform = Transform3D(2.77836, 0, 0.34744278, 0, 2.8000002, 0, -0.34744278, 0, 2.77836, -451.19354, 19.218742, 356.51938)
+explorer_id = "astro_courts"
 english_title = "Astro Courts"
 english_information = "The Astro Courts are outdoor artificial turf courts used for PE classes, training sessions, and sports such as netball, tennis, and other activities."
 japanese_title = "アストロコート"
@@ -534,6 +571,7 @@ japanese_information = "アストロコートは人工芝の屋外コートで�
 
 [node name="CatholicChapel" parent="InfoPoints" unique_id=332931578 instance=ExtResource("16_dss4m")]
 transform = Transform3D(-0.14439243, 0, -2.7962744, 0, 2.8, 0, 2.7962744, 0, -0.14439243, -455.9557, 19.853512, 301.15796)
+explorer_id = "chapel"
 english_title = "Chapel"
 english_information = "The Chapel is a place for prayer, reflection, liturgies, and Catholic celebrations."
 japanese_title = "チャペル"
@@ -547,6 +585,207 @@ japanese_title = "制服ショップ"
 japanese_information = "制服ショップでは、学校の制服やスポーツユニフォーム、学校指定の衣類や用品を購入できます。"
 
 [node name="InteractionUI" parent="." unique_id=986432447 instance=ExtResource("17_7t5mc")]
+
+[node name="Tab" type="Button" parent="." unique_id=1845604160]
+offset_left = 214.0
+offset_right = 372.0
+offset_bottom = 66.0
+theme_override_fonts/font = ExtResource("20_2lf6f")
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = SubResource("StyleBoxFlat_xgqkh")
+text = "Tab"
+
+[node name="GameplayUI" type="Control" parent="." unique_id=1536731561]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Tab_menu" type="PanelContainer" parent="GameplayUI" unique_id=831067029]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 102.0
+offset_right = 594.0
+offset_bottom = 1028.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_munwf")
+script = ExtResource("21_oo54l")
+
+[node name="ExplorerPanel" type="Panel" parent="GameplayUI/Tab_menu" unique_id=1686527590]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="GameplayUI/Tab_menu/ExplorerPanel" unique_id=956867445]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 43.0
+offset_right = 413.0
+offset_bottom = 102.0
+theme_override_fonts/font = ExtResource("21_7iits")
+theme_override_font_sizes/font_size = 45
+text = "JPC Explorer"
+
+[node name="Description" type="Label" parent="GameplayUI/Tab_menu/ExplorerPanel" unique_id=1022462391]
+layout_mode = 0
+offset_left = -35.0
+offset_top = 134.0
+offset_right = 557.0
+offset_bottom = 303.0
+theme_override_fonts/font = ExtResource("5_71j4m")
+theme_override_font_sizes/font_size = 30
+text = "Explore JPC and discover important locations around the school."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="LocationList" type="VBoxContainer" parent="GameplayUI/Tab_menu/ExplorerPanel" unique_id=1247100002]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 229.0
+offset_right = 460.0
+offset_bottom = 805.0
+
+[node name="Astro Courts" type="CheckButton" parent="GameplayUI/Tab_menu/ExplorerPanel/LocationList" unique_id=1481349163]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_71j4m")
+theme_override_font_sizes/font_size = 35
+text = "Astro Courts"
+
+[node name="Canteen" type="CheckButton" parent="GameplayUI/Tab_menu/ExplorerPanel/LocationList" unique_id=99806978]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_71j4m")
+theme_override_font_sizes/font_size = 35
+text = "Canteen"
+
+[node name="Chapel" type="CheckButton" parent="GameplayUI/Tab_menu/ExplorerPanel/LocationList" unique_id=228244797]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_71j4m")
+theme_override_font_sizes/font_size = 35
+text = "Chapel"
+
+[node name="Cooking Room" type="CheckButton" parent="GameplayUI/Tab_menu/ExplorerPanel/LocationList" unique_id=383138782]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_71j4m")
+theme_override_font_sizes/font_size = 35
+text = "Cooking Room"
+
+[node name="Gymnasium" type="CheckButton" parent="GameplayUI/Tab_menu/ExplorerPanel/LocationList" unique_id=1607285305]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_71j4m")
+theme_override_font_sizes/font_size = 35
+text = "Gymnasium"
+
+[node name="Library" type="CheckButton" parent="GameplayUI/Tab_menu/ExplorerPanel/LocationList" unique_id=1700778010]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_71j4m")
+theme_override_font_sizes/font_size = 35
+text = "Library"
+
+[node name="Music Suite" type="CheckButton" parent="GameplayUI/Tab_menu/ExplorerPanel/LocationList" unique_id=82781870]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_71j4m")
+theme_override_font_sizes/font_size = 35
+text = "Music Suite"
+
+[node name="Sports Fields" type="CheckButton" parent="GameplayUI/Tab_menu/ExplorerPanel/LocationList" unique_id=567195229]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_71j4m")
+theme_override_font_sizes/font_size = 35
+text = "Sports Fields"
+
+[node name="Student Reception" type="CheckButton" parent="GameplayUI/Tab_menu/ExplorerPanel/LocationList" unique_id=2143350889]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_71j4m")
+theme_override_font_sizes/font_size = 35
+text = "Student Reception"
+
+[node name="Whare Haoini Paora" type="CheckButton" parent="GameplayUI/Tab_menu/ExplorerPanel/LocationList" unique_id=1072729532]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_71j4m")
+theme_override_font_sizes/font_size = 35
+text = "Whare Haoini Paora "
+
+[node name="Progress" type="Label" parent="GameplayUI/Tab_menu/ExplorerPanel" unique_id=1849887247]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 867.0
+offset_right = 472.0
+offset_bottom = 909.0
+theme_override_fonts/font = ExtResource("5_71j4m")
+theme_override_font_sizes/font_size = 32
+text = "0 / 10 Locations Discovered"
+
+[node name="NotificationLayer" type="CanvasLayer" parent="GameplayUI" unique_id=1010060839]
+layer = 2
+
+[node name="LocationNotification" type="PanelContainer" parent="GameplayUI/NotificationLayer" unique_id=1282603780]
+visible = false
+offset_left = 1349.0
+offset_top = 4.0
+offset_right = 1921.0
+offset_bottom = 194.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ts3gi")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameplayUI/NotificationLayer/LocationNotification" unique_id=206793021]
+layout_mode = 2
+alignment = 1
+
+[node name="LocationTitle" type="Label" parent="GameplayUI/NotificationLayer/LocationNotification/VBoxContainer" unique_id=1523577063]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("23_kpybi")
+theme_override_font_sizes/font_size = 42
+text = "LOCATION DISCOVERED!"
+horizontal_alignment = 1
+
+[node name="LocationProgress" type="Label" parent="GameplayUI/NotificationLayer/LocationNotification/VBoxContainer" unique_id=1578715762]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("23_kpybi")
+theme_override_font_sizes/font_size = 25
+text = "Library — 1 / 10 locations found"
+horizontal_alignment = 1
+
+[node name="QuickTips" type="PanelContainer" parent="GameplayUI" unique_id=585477049]
+custom_minimum_size = Vector2(900, 360)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 516.0
+offset_top = 585.0
+offset_right = 1479.0
+offset_bottom = 945.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0nbtd")
+script = ExtResource("24_ctatt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameplayUI/QuickTips" unique_id=1993222883]
+layout_mode = 2
+theme_override_constants/separation = 36
+
+[node name="Title" type="Label" parent="GameplayUI/QuickTips/VBoxContainer" unique_id=1992888575]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_71j4m")
+theme_override_font_sizes/font_size = 32
+text = "Quick Tips"
+horizontal_alignment = 1
+
+[node name="SprintTip" type="Label" parent="GameplayUI/QuickTips/VBoxContainer" unique_id=2077440550]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_71j4m")
+theme_override_font_sizes/font_size = 32
+text = "Hold SHIFT to sprint and move faster."
+
+[node name="InteractTip" type="Label" parent="GameplayUI/QuickTips/VBoxContainer" unique_id=55945486]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_71j4m")
+theme_override_font_sizes/font_size = 32
+text = "Press E near an information point to learn about that location."
+
+[node name="GotItButton" type="Button" parent="GameplayUI/QuickTips/VBoxContainer" unique_id=1182735066]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("5_71j4m")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_37qwj")
+text = "Got It — Start Exploring"
 
 [connection signal="pressed" from="PauseMenu/PausePanel/VBoxContainer/Resume" to="PauseMenu" method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseMenu/PausePanel/VBoxContainer/Options" to="PauseMenu" method="_on_options_pressed"]

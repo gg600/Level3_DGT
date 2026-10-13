@@ -26,18 +26,18 @@ var translations = {
 		"return": "Return",
 		"instructions_info": "Welcome to JPC Explorer!
 
-		Your goal is to explore the John Paul College campus and learn where important locations are.
+		Explore the JPC campus and discover important locations.
 
-		Controls:
-		• W, A, S, D – Move
-		• Mouse – Look around
+		Controls
+		• WASD – Move
+		• Mouse – Look
 		• Space – Jump
 		• Shift – Sprint
-		• E – Interact with information points
-		• Esc – Pause the game
+		• E – Interact
+		• Tab – Explorer checklist
+		• Esc – Pause
 
-		Walk around the school and interact with information points to learn about each location.
-		Use what you discover to become familiar with the campus.
+		Find locations and interact with information points to learn about the school.
 
 		Enjoy exploring!",
 		"options_info": "Adjust the volume of the game's background music.",
@@ -70,20 +70,20 @@ var translations = {
 		"return": "戻る",
 		"instructions_info": "JPC Explorerへようこそ！
 
-		学校内を探索し、ジョン・ポール・カレッジの重要な場所について学びましょう。
+JPCのキャンパスを探索し、大切な場所を見つけましょう。
 
-		操作方法：
-		• W、A、S、Dキー – 移動
-		• マウス – 視点を動かす
-		• スペースキー – ジャンプ
-		• Shiftキー – ダッシュ
-		• Eキー – 情報ポイントを調べる
-		• Escキー – ポーズメニューを開く
+操作方法
+• WASD – 移動
+• マウス – 視点操作
+• Space – ジャンプ
+• Shift – ダッシュ
+• E – 調べる
+• Tab – 探索チェックリスト
+• Esc – 一時停止
 
-		学校内を歩き回り、情報ポイントを調べて各施設について学びましょう。
-		キャンパスに慣れるために、さまざまな場所を探索してください。
+場所を見つけ、案内ポイントを調べて学校について学びましょう。
 
-		楽しく探索しましょう！",
+探索を楽しんでください！",
 		"options_info": "ゲームのBGMの音量を調整します。",
 		"credits_info": "サードパーティアセット
 
