@@ -42,6 +42,8 @@ func update_language():
 	$"PauseMenu/OptionsPanel/VBoxContainer/Sound Options".text = LanguageManager.get_text("sound_options")
 	$"PauseMenu/OptionsPanel/VBoxContainer/Options Info".text = LanguageManager.get_text("options_info")
 	$PauseMenu/OptionsPanel/VBoxContainer/HBoxContainer/Return.text = LanguageManager.get_text("return")
+	$PauseMenu/OptionsPanel/VBoxContainer/MusicSlider.text = LanguageManager.get_text("music")
+	$PauseMenu/OptionsPanel/VBoxContainer/SFXSlider.text = LanguageManager.get_text("sound_effects")
 
 	$PauseMenu/ConfirmationPanel/VBoxContainer/Quit.text = LanguageManager.get_text("quit")
 	$PauseMenu/ConfirmationPanel/VBoxContainer/Confirmation.text = LanguageManager.get_text("quit_confirmation")

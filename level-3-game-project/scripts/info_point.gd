@@ -39,16 +39,26 @@ func _on_area_3d_body_exited(body):
 			body.current_interactable = null
 
 
+
 func interact():
 	SFXManager.play_interface()
 
 	var ui = get_tree().current_scene.get_node("InteractionUI")
 
+	# Check whether this interaction completes the checklist.
+	var was_incomplete = ExplorerManager.get_discovered_count() < ExplorerManager.locations.size()
+
+	# Mark the location as discovered.
+	if explorer_id != "":
+		ExplorerManager.discover_location(explorer_id)
+
+	# Skip the information popup only when the final
+	# location is discovered for the first time.
+	if was_incomplete and ExplorerManager.get_discovered_count() == ExplorerManager.locations.size():
+		return
+
+	# Display the information popup normally.
 	if LanguageManager.current_language == "ja":
 		ui.show_information(japanese_title, japanese_information)
 	else:
 		ui.show_information(english_title, english_information)
-
-	# Mark this location as discovered
-	if explorer_id != "":
-		ExplorerManager.discover_location(explorer_id)

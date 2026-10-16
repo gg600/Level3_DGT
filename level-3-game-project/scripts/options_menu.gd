@@ -18,7 +18,8 @@ func update_language():
 	$PanelContainer/VBoxContainer/Sound.text = LanguageManager.get_text("sound_options")
 	$PanelContainer/VBoxContainer/Confirmation.text = LanguageManager.get_text("options_info")
 	$"PanelContainer/VBoxContainer/HBoxContainer/Back to Menu".text = LanguageManager.get_text("back_to_menu")
-
+	$PanelContainer/VBoxContainer/MusicSlider.text = LanguageManager.get_text("music")
+	$PanelContainer/VBoxContainer/SFXSlider.text = LanguageManager.get_text("sound_effects")
 
 func _on_h_slider_value_changed(value: float) -> void:
 	MusicManager.set_music_volume(value)

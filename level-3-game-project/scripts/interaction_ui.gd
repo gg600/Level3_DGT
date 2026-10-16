@@ -15,7 +15,8 @@ func show_information(title_text: String, info_text: String):
 func hide_information():
 	panel.visible = false
 
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	if not get_tree().paused:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _on_close_button_pressed():
 	SFXManager.play_mouse_click()

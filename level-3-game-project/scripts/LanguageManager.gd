@@ -42,11 +42,43 @@ var translations = {
 		Enjoy exploring!",
 		"options_info": "Adjust the volume of the game's background music.",
 		"credits_info": "Third-Party Assets
-
+		
 		Sky3D (Dynamic Day/Night System)
 		Created by TokisanGames
-		Used under the MIT License."
-	},
+		Used under the MIT License.",
+		
+		"quick_tips": "Quick Tips",
+		"sprint_tip": "Hold SHIFT to sprint and move faster.",
+		"interact_tip": "Press E near an information point to learn about that location.",
+		"start_exploring": "Got It — Start Exploring",
+		
+		"explorer_title": "JPC Explorer",
+		"explorer_description": "Explore JPC and discover important locations around the school.",
+		"location_astro_courts": "Astro Courts",
+		"location_canteen": "Canteen",
+		"location_chapel": "Chapel",
+		"location_cooking_room": "Cooking Room",
+		"location_gymnasium": "Gymnasium",
+		"location_library": "Library",
+		"location_music_suite": "Music Suite",
+		"location_sports_fields": "Sports Fields",
+		"location_student_reception": "Student Reception",
+		"location_whare_haoini_paora": "Whare Haoini Paora",
+		
+		"location_discovered": "LOCATION DISCOVERED!",
+		"locations_discovered": "Locations Discovered",
+		
+		"win_title": "Congratulations!",
+		"win_message": "You've discovered all 10 locations around John Paul College!",
+		"continue_exploring": "Continue Exploring",
+		"return_to_main_menu": "Return to Main Menu",
+		
+		"music": "Music",
+		"sound_effects": "Sound Effects",
+		
+		
+		
+		},
 
 	"ja": {
 		"game_title": "ゲームタイトル",
@@ -89,7 +121,37 @@ JPCのキャンパスを探索し、大切な場所を見つけましょう。
 
 		Sky3D（昼夜サイクルシステム）
 		制作者：TokisanGames
-		MITライセンスのもとで使用しています。"
+		MITライセンスのもとで使用しています。",
+		
+		"quick_tips": "クイックヒント",
+		"sprint_tip": "Shiftキーを押し続けると、ダッシュして速く移動できます。",
+		"interact_tip": "案内ポイントの近くでEキーを押すと、その場所について学べます。",
+		"start_exploring": "わかりました — 探索を始める",
+
+		"explorer_title": "JPC Explorer",
+		"explorer_description": "JPCを探索して、大切な場所を見つけよう。",
+		"location_astro_courts": "アストロコート",
+		"location_canteen": "売店",
+		"location_chapel": "チャペル",
+		"location_cooking_room": "調理室",
+		"location_gymnasium": "体育館",
+		"location_library": "図書館",
+		"location_music_suite": "音楽室",
+		"location_sports_fields": "運動場",
+		"location_student_reception": "生徒受付",
+		"location_whare_haoini_paora": "ファレ・ハオイニ・パオラ",
+
+		"location_discovered": "場所を発見！",
+		"locations_discovered": "発見した場所",
+		
+		"win_title": "おめでとう！",
+		"win_message": "JPCの10か所すべてを発見しました！",
+		"continue_exploring": "探索を続ける",
+		"return_to_main_menu": "メインメニューに戻る",
+		
+		"music": "音楽",
+		"sound_effects": "効果音",
+
 	}
 }
 
